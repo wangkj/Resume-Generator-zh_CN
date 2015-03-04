@@ -1,0 +1,531 @@
+/*Body Styles*/
+body{
+	width:100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #fff;
+	font-family: 'Lato', sans-serif;
+}
+
+
+/*UNIVERSALS & FIXES*/
+input:focus, input:active { outline: none; }
+* {
+    outline: none;
+}
+/*No prev button for now*/
+.prev{
+	display: none;
+}
+
+
+/*Sidebar*/
+aside{
+	z-index: 50000;
+	width: 300px;
+	height: 100%;
+	position: fixed; left: 0; top: 0;
+	box-sizing: border-box;
+	background-color: #2B2F3E;
+	color:#93959E;
+	overflow: scroll;
+}
+	aside h1{
+		width:100%;
+		text-align: center;
+		font-weight: 100;
+		font-size: 45pt;
+		text-transform: uppercase;
+		letter-spacing: -2px;
+	}
+	aside ul{
+		list-style-type: none;
+		padding: 0;
+		margin: 0 auto;
+	}
+		aside ul li{
+			padding: 22px 30px 22px 30px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-weight: 400;
+			font-size: 9pt;
+			border-top: 1px solid #34394b;
+			transition:0.15s;
+		}
+			aside ul li:last-child{
+				border-bottom: 1px solid #343943;
+			}
+				aside .activated{
+					background: #f5414c;
+					background: linear-gradient(to bottom, #f5414c 0%,#ff2c5e 100%);
+					color: #fff;
+				}
+			aside ul li:hover{
+				background-color: rgba(255,255,255,0.05);
+				transition:0.15s;
+				cursor: pointer;
+			}
+			aside ul li i{
+				padding-right: 10px;
+			}
+
+
+/*Right hand box, grey background, contains dialogs - everything but sidebar*/
+article{
+	width: calc(100% - 300px);
+	height:100%;
+	position: fixed; top:0px; right: 0px;
+	background-color: #f9f9f9;
+	box-shadow: -6px 0px 15px -4px rgba(0,0,0,0.39);
+	overflow: scroll;
+	z-index: 500000;
+}
+
+	article section{
+		width:70%; height:auto;
+		min-height: 100px;
+		position: relative;
+		left: 15%; top: 75px;
+		background-color: #fff;
+		border: 1px solid #eef4f4;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.03), 0 3px 6px rgba(0,0,0,0.09);
+		box-sizing:border-box;
+		padding: 25px;
+		margin-bottom: 75px;
+	}
+
+		article section h1{
+			font-weight: 100;
+			font-size: 12pt;
+			letter-spacing: 1px;
+			padding: 0; margin: 0 auto;
+			color: #b9bece;
+		}
+
+		article section h2{
+			font-weight: 300;
+			color: #626c8d;
+			text-align: center;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			font-size: 14pt;
+		}
+
+
+	section nav{
+		width:100%;
+		overflow: hidden;
+		padding-top: 15px;
+	}
+		section nav button{
+			width:50%;
+			float: left;
+			border:none; border-radius: 0;
+			box-sizing:border-box;
+			padding: 18px;
+			background-color: transparent;
+			text-transform: uppercase;
+			font-weight: 400;
+			letter-spacing: 1px;
+			font-size: 10pt;
+			color:#626c8d;
+			transition:0.2s;
+		}
+			section nav button:hover{
+				color:#f5414c;
+				transition:0.2s;
+				cursor: pointer;
+			}
+			section nav button:nth-child(1){
+				text-align: left;
+			}
+			section nav button:nth-child(2){
+				text-align: right;
+				float: right;
+			}
+
+
+label{
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 0; margin: 0 auto;
+	padding-left: 5%; padding-bottom: 12px;
+	font-size: 9pt;
+	color:rgba(43,47,62,0.4);
+}
+hr{
+	opacity: 0;
+	margin-bottom: 15px;
+}
+
+
+
+/*Personal information specific*/
+#personal_information input{
+	width:90%;
+	margin-left: 5%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 22pt;
+	font-weight: 300;
+	font-family: 'Lato', sans-serif;
+	padding: 10px;
+	text-transform: capitalize;
+	background-color: #fff;
+}
+	.personal_block:nth-child(2), .personal_block:nth-child(3), .personal_block:nth-child(4), .personal_block:nth-child(5), .personal_block:nth-child(6){
+		display: none;
+	}
+	#location_personal_overview h2{
+		line-height: 1.6em;
+	}
+
+
+/*Statement specific*/
+#personal_statement{
+	display: none;
+}
+	#personal_statement textarea{
+		width:100%; height: auto;
+		min-height: 260px;
+		box-sizing:border-box;
+		padding: 10px;
+		font-size: 12pt;
+		font-weight: 300;
+		letter-spacing: 1px;
+		line-height: 1.65em;
+		color: rgba(0,0,0,0.9);
+		border: 1px solid rgba(43,47,62,0.2);
+	}
+		#statement_feedback{
+			font-weight: 400;
+			color:rgba(43,47,62,0.4);
+			font-size: 9pt;
+			padding-top: 6px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			width: 100%;
+			text-align: center;
+		}#statement_remaining{font-weight: 900; background-color: #FFF508;}
+
+
+/*Work Experience Specific*/
+#work_experience{
+	display: none;
+	margin-bottom: 75px;
+}
+	#work_experience input{
+		width:90%;
+		margin-left: 5%;
+		margin-top: 0px;
+		margin-bottom: 15px;
+		font-size: 16pt;
+		font-weight: 300;
+		font-family: 'Lato', sans-serif;
+		padding: 10px;
+		text-transform: capitalize;
+		background-color: #fff;
+	}
+	#work_experience textarea{
+		width:90%;
+		margin-left: 5%;
+		margin-top: 0px;
+		margin-bottom: 15px;
+		font-size: 12pt;
+		font-weight: 300;
+		font-family: 'Lato', sans-serif;
+		padding: 10px;
+		letter-spacing: 1px;
+		background-color: #fff;
+		border: 1px solid rgba(0,0,0,0.2);
+		min-height: 180px;
+	}
+	#desc_formatting{
+		font-size: 9pt;
+		letter-spacing: 1px;
+		color:rgba(0,0,0,0.5);
+		width:100%;
+		text-align: center; text-transform: uppercase;
+		font-weight: 400;
+	}
+
+	.add_job{
+		width: 100%;
+		outline: none;
+		border:none;
+		border-radius: 0;
+		padding: 18px; padding-bottom: 0px;
+		margin-top: 14px;
+		background-color: transparent;
+		text-transform: uppercase;
+		font-weight: 400;
+		letter-spacing: 1px;
+		font-size: 10pt;
+		color:#626c8d;
+		transition:0.2s;
+	}
+		.add_job:hover{
+			cursor: pointer;
+			color: #f5414c;
+			transition:0.2s;
+		}
+
+
+/*Education specifics*/
+#education{
+	display: none;
+	
+}
+	#education input{
+		width:90%;
+		margin-left: 5%;
+		margin-top: 0px;
+		margin-bottom: 15px;
+		font-size: 16pt;
+		font-weight: 300;
+		font-family: 'Lato', sans-serif;
+		padding: 10px;
+		text-transform: capitalize;
+		background-color: #fff;
+	}
+	#education textarea{
+		width:90%;
+		margin-left: 5%;
+		margin-top: 0px;
+		margin-bottom: 15px;
+		font-size: 12pt;
+		font-weight: 300;
+		font-family: 'Lato', sans-serif;
+		padding: 10px;
+		letter-spacing: 1px;
+		background-color: #fff;
+		border: 1px solid rgba(0,0,0,0.2);
+		min-height: 180px;
+	}
+	#desc_formatting{
+		font-size: 9pt;
+		letter-spacing: 1px;
+		color:rgba(0,0,0,0.5);
+		width:100%;
+		text-align: center; text-transform: uppercase;
+		font-weight: 400;
+	}
+
+	.add_school{
+		width: 100%;
+		outline: none;
+		border:none;
+		border-radius: 0;
+		padding: 18px; padding-bottom: 0px; padding-top: 12px;
+		margin-top: 10px;
+		background-color: transparent;
+		text-transform: uppercase;
+		font-weight: 400;
+		letter-spacing: 1px;
+		font-size: 10pt;
+		color:#626c8d;
+		transition:0.2s;
+	}
+		.add_school:hover{
+			cursor: pointer;
+			color: #f5414c;
+			transition:0.2s;
+		}
+
+
+
+/*Skills specifics*/
+#skills{
+	display: none;
+	margin-bottom: 75px;
+}
+	#skills input{
+		width:90%;
+		margin-left: 5%;
+		margin-top: 0px;
+		margin-bottom: 15px;
+		font-size: 16pt;
+		font-weight: 300;
+		font-family: 'Lato', sans-serif;
+		padding: 10px;
+		text-transform: capitalize;
+		background-color: #fff;
+	}
+	#education textarea{
+		width:90%;
+		margin-left: 5%;
+		margin-top: 0px;
+		margin-bottom: 15px;
+		font-size: 12pt;
+		font-weight: 300;
+		font-family: 'Lato', sans-serif;
+		padding: 10px;
+		letter-spacing: 1px;
+		background-color: #fff;
+		border: 1px solid rgba(0,0,0,0.2);
+		min-height: 180px;
+	}
+
+
+
+
+#finished{
+	text-align: center;
+	display: none;
+}
+
+	#generate{
+		height: 100px;
+		width:100px;
+		text-align: center;
+		line-height: 95px;
+		font-size: 16pt;
+		font-weight: 900;
+		font-family: 'Lato', sans-serif;
+		background-color: #f5414c;
+		color:#fff;
+		border-radius: 50%;
+		border: 1px solid #eef4f4;
+		transition: background-color 0.5s ease;
+	}
+		#generate:hover{
+			cursor: pointer;
+			background-color: #2c6bff;
+			transition: background-color 0.5s ease;
+		}
+
+
+
+/*Styling for the actual generated PDF*/
+#print_page{
+	position: fixed;
+	padding: 0; margin: 0 auto;
+	top:0px; left:0%;
+	width:7.23in; height:11.69in;
+	mso-header-margin:.5in; mso-footer-margin:.5in; mso-paper-source:0;
+	z-index: 5000;
+	background-color: #fff;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	/*display: none;*/
+}
+	#pdf_name{
+		width: 100%;
+		text-align: center;
+		font-size: 28pt;
+		font-weight: 300;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	#pdf_contact{
+		line-height: 1.5em;
+		padding-top: 5px;
+		padding-bottom: 10px;
+	}
+
+	#print_page hr{
+		display: block !important;
+		opacity: 1;
+		color: transparent;
+		background-color: transparent;
+		border: 0px solid #000;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		/*border-bottom: 1px solid #eef4f4;*/
+	}
+
+	#pdf_statement{
+		font-family: 'Lato';
+		text-align: justify !important;
+		line-height: 1.6em;
+		text-align: left;
+		font-size: 9pt;
+		padding-bottom: 6px;
+	}
+
+	#print_page h2{
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 14pt;
+		letter-spacing: 1px;
+	}
+
+	#pdf_job1{
+		text-align: left;
+		font-weight: 700;
+	}
+		#pdf_job1_emp_desc{
+			font-weight: 300;
+			font-size: 10pt;
+			line-height: 1.5em;
+			margin: 0 auto;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		#pdf_job1_job_desc{
+			font-weight: 300;
+			font-size: 10pt;
+			line-height: 1.5em;
+			margin: 0 auto;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		#job1_title{
+			font-size: 10pt;
+		}
+
+	#print_page h3{
+		font-size: 12pt;
+		letter-spacing: 1px;
+	}
+
+	#print_page h4{
+		font-size: 10pt;
+		letter-spacing: 1px;
+		width: 66%; padding-left: 17%;
+	}
+
+
+
+@media print {
+	aside, article{
+		display: none;
+	}
+}
+
+
+
+/*Awesome link underlining, unused for now*/
+h6 > a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+h6 > a:hover {
+  color: #000;
+}
+
+h6 > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+h6 > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}

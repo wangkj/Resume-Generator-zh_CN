@@ -1,0 +1,226 @@
+<html>
+	<head>
+		<title>Resume</title>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<!-- Google Webfont, Lato, 100,300,400,700,900 -->
+		<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css">
+
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+
+		<!-- Ionicons CDN -->
+		<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+	</head>
+	<body>
+
+		<aside>
+			<h1>resume</h1>
+
+			<ul>
+				<li id="tab_1" class="activated"><i class="ion-ios-body"></i> Personal Information</li>
+				<li id="tab_2"><i class="ion-ios-chatbubble"></i> Statement</li>
+				<li id="tab_3"><i class="ion-ios-briefcase"></i> Work Experience</li>
+				<li id="tab_4"><i class="ion-ios-book"></i> Education</li>
+				<li id="tab_5"><i class="ion-ios-list"></i> Skills</li>
+				<li id="tab_6"><i class="ion-ios-copy"></i> Generate Resume</li>
+			</ul>
+
+		</aside>
+
+
+
+		<article>
+
+			<section id="personal_information">
+
+				<div class="personal_block" id="name_block">
+					<h2>Hey there, what's your name?</h2>
+					<input type="text" id="personal-name-input" placeholder="John Smith">
+					<nav>
+						<button class="prev"><i class="ion-ios-arrow-thin-left"></i> Previous</button>
+						<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+					</nav>
+				</div>
+
+				<div class="personal_block" id="email_block">
+					<h2>Nice to meet you, <span class="first_name_here"></span>!<br/>What email address do you want to use?</h2>
+					<input type="text" id="personal-email-input" placeholder="john@johnsmith.com">
+					<nav>
+						<button class="prev"><i class="ion-ios-arrow-thin-left"></i> Previous</button>
+						<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+					</nav>
+				</div>
+
+				<div class="personal_block" id="phone_block">
+					<h2>I know we just met, but can I have your number? ;)</h2>
+					<input type="text" id="personal-phone-input" placeholder="760-555-4824">
+					<nav>
+						<button class="prev"><i class="ion-ios-arrow-thin-left"></i> Previous</button>
+						<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+					</nav>
+				</div>
+
+				<div class="personal_block" id="location_block">
+					<h2>Not to be creepy, but where are you located?</h2>
+					<input type="text" id="personal-location-input" placeholder="Madison, WI">
+					<nav>
+						<button class="prev"><i class="ion-ios-arrow-thin-left"></i> Previous</button>
+						<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+					</nav>
+				</div>
+
+				<div class="personal_block" id="link_block">
+					<h2>Lastly, do you have a LinkedIn or online portfolio?</h2>
+					<input type="text" id="personal-link-input" placeholder="http://linkedin.com/in/mitchsamuels">
+					<nav>
+						<button class="prev"><i class="ion-ios-arrow-thin-left"></i> Previous</button>
+						<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+					</nav>
+				</div>
+
+				<div class="personal_block" id="location_personal_overview">
+					<h2><b>Okay, so lets recap.</b><br/><br/>Your name is <b><span class="full_name_here"></span></b> and I can email you at <b><span class="email_here"></span></b> or call you at <b><span class="phone_here"></span></b>. You are located in <b><span class="location_here"></span></b>, and your portfolio can be seen at <b><span class="link_here"></span></b>...<br/><br/>Is this all correct?</h2>
+					<nav>
+						<button class="prev"><i class="ion-ios-arrow-thin-left"></i> No... try again :(</button>
+						<button class="next">Yes! lets continue :) <i class="ion-ios-arrow-thin-right"></i></button>
+					</nav>
+				</div>
+
+			</section>
+
+
+
+			<section id="personal_statement">
+
+				<h2>Would you like to provide a personal statement?<br/>If not, just leave it blank.</h2>
+				<textarea id="personal_statement_input" maxlength="800" placeholder="What I learned in boating school is..."></textarea>
+				<div id="statement_feedback">For your own good, you only have <span id="statement_remaining"></span> characters left.</div>
+				<nav>
+					<button class="prev"><i class="ion-ios-arrow-thin-left"></i> Previous</button>
+					<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+				</nav>
+
+			</section>
+
+
+
+			<section id="work_experience">
+
+				<h2>Lets add your work experience.</h2>
+				<label>Employer:</label>
+				<input type="text" id="employer" placeholder="Google, Inc.">
+				<label>Location:</label>
+				<input type="text" id="location" placeholder="Mountain View, CA">
+				<label>Time:</label>
+				<input type="text" id="time" placeholder="July 2014 - Present">
+				<label>Short(ish) Employer Description:</label>
+				<input type="text" id="employer_desc" placeholder="Google is the leading search engine...">
+				<hr/>
+				<label>Job Title:</label>
+				<input type="text" id="title" placeholder="Front End Engineer">
+				<label>Job Description:</label>
+				<textarea id="desc" placeholder="Responsible for the development of Google.com, nothing serious."></textarea>
+				<div id="desc_formatting">Hint: an asterisk ( * ) will turn into a bullet point!</div>
+
+				<!-- <button class="add_job"><i class="ion-ios-plus-empty"></i> Add another Job <i class="ion-ios-plus-empty"></i></button> -->
+				<nav>
+					<button class="prev"><i class="ion-ios-arrow-thin-left"></i> Previous</button>
+					<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+				</nav>
+
+			</section>
+
+
+
+			<section id="education">
+
+				<h2>"Is our children learning?" - G.W. Bush</h2>
+				<label>Degree:</label>
+				<input type="text" id="degree" placeholder="Bachelor of Science in Computer Science">
+				<label>School:</label>
+				<input type="text" id="school" placeholder="University of Wisconsin-Madison">
+				<label>Location:</label>
+				<input type="text" id="school_location" placeholder="Madison, WI">
+				<label>Graduation Year:</label>
+				<input type="text" id="graduation" placeholder="2015">
+
+				<!-- <button class="add_school"><i class="ion-ios-plus-empty"></i> Add another School <i class="ion-ios-plus-empty"></i></button> -->
+				<nav>
+					<button class="prev"><i class="ion-ios-arrow-thin-left"></i> Previous</button>
+					<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+				</nav>
+
+			</section>
+
+
+
+
+			<section id="skills">
+
+				<h2 style="padding-bottom:15px;">Can you actually do anything?</h2>
+				<label>Skills (Seperate with commas):</label>
+				<input type="text" id="skillsinput" placeholder="HTML, CSS, Javascript, Adobe Suite">
+				<nav>
+					<button class="prev"><i class="ion-ios-arrow-thin-left"></i> Previous</button>
+					<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+				</nav>
+
+			</section>
+
+
+
+			<section id="finished">
+
+				<h2 style="padding-bottom:15px;">Are you finished? Yeah? Then click that button.</h2>
+				<button id="generate">GO</button>
+
+			</section>
+
+
+		</article>
+
+
+		<div id="print_page">
+
+			<div id="pdf_name">John E. Smith</div>
+			<div id="pdf_contact"><i class="ion-email"></i> <span id="pdf_email">mitch@mitchs.co</span> &nbsp; &#8226; &nbsp; <i class="ion-android-call"></i> <span id="pdf_phone">507-330-5897</span> &nbsp; &#8226; &nbsp; <span id="pdf_location">Madison, WI</span><br/><b><span id="pdf_link">http://linkedin.com/in/mitchas</span></b></div>
+
+			<hr/>
+
+			<div id="pdf_statement">
+				Can we all just agree as the greater design community to stop fucking talking about Comic Sans altogether? It’s getting fucking old. Nothing of value comes to you without fucking working at it. Saul Bass on failure: Failure is built into creativity… the creative act involves this element of ‘newness’ and ‘experimentalism,’ then one must expect and accept the fucking possibility of failure. Someday is not a fucking day of the week. When you sit down to work, external critics aren’t the enemy. It’s you who you must to fight against to do great fucking work. You must overcome yourself. What’s important is the fucking drive to see a project through no matter what. Intuition is fucking important. Don’t fucking lie to yourself. Make your work consistent but not fucking predictable.
+			</div>
+
+			<hr/>
+
+			<h2>Professional Experience</h2>
+
+			<div id="pdf_job1">
+				<span id="job_1_employer">Google, Inc</span> &nbsp; &#8226; &nbsp; <span id="job_1_loc">Mountain View, CA</span> &nbsp; &#8226; &nbsp; <span id="job_1_time">June 2010-Present</span>
+				<p id="pdf_job1_emp_desc">Google is the leading search engine on the internet and the developer of the most popular web email service, Gmail, as well as many other awesome and fucking useless online products.</p>
+
+				<span id="job1_title">Web Developer</span>
+				<p id="pdf_job1_job_desc">Google is the leading search engine on the internet and the developer of the most popular web email service, Gmail, as well as many other awesome and fucking useless online products.</p>
+			</div>
+
+			<hr/>
+
+			<h2>Education</h2>
+
+			<h3><span id="pdf_degree">Bachelor of Arts in Computer Science</span><br/><span id="pdf_school">University of Wisconsin-Madison</span> &nbsp; &#8226; &nbsp; <span id="pdf_school_loc">Madison, WI</span> &nbsp; &#8226; &nbsp; <span id="pdf_graduation">2015</span></h3>
+
+			<hr/>
+
+			<h2>Skills</h2>
+
+			<h4><span id="pdf_skills">Adobe Suite &nbsp; &#8226; &nbsp; Microsoft Word &nbsp; &#8226; &nbsp; Microsoft Excel &nbsp; &#8226; &nbsp; Sublime &nbsp; &#8226; &nbsp; Sketch &nbsp; &#8226; &nbsp; Git &nbsp; &#8226; &nbsp; HTML &nbsp; &#8226; &nbsp; Javascript &nbsp; &#8226; &nbsp; CSS &nbsp; &#8226; &nbsp; PHP</h4>
+
+
+		</div>
+
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
