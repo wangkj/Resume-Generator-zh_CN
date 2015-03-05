@@ -4,11 +4,16 @@
 
 		<meta charset="utf-8">
 		<meta name="theme-color" content="#f5414c">
+		<meta http-equiv="refresh" content="3; url=http://ineedaresu.me/" />
+
 		<meta name="description" content="Ineedaresu.me is a super simple and free resume generator. You fill in a few fields including work history, education, skills, and more, and we will generate you a PDF resume that you can download or print instantly!">
 		<meta name="author" content="Mitch Samuels">
 		<meta name="keywords" content="Mitch Samuels, resume, generator, creator, maker, resumay, job, jobs, career, javascript, pdf, word, print, creating, make, generate, apply, applicant">
 
-		<link rel="shortcut icon" type="image/ico" href="src/rainbow.ico" />
+		<link rel="shortcut icon" type="image/ico" href="rainbow.ico" />
+
+		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+		<link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png"/>
 
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="animate.css">
@@ -30,12 +35,13 @@
 		<div id="intro_wrapper">
 			<div id="intro_inner">
 				<p>
-					This creates a super slick and simple resume based off <a href="http://www.businessinsider.com/why-this-is-an-excellent-resume-2013-11" target="_blank">Business Insider's "Excellent Resume"</a>. To see an example of a resume this generates, <a href="src/example.pdf" target="_blank">click here</a>.<br/><br/><b>Here are a few things in mind when using this app:</b>
+					This creates a super slick and simple resume based off <a href="http://www.businessinsider.com/why-this-is-an-excellent-resume-2013-11" target="_blank">Business Insider's "Excellent Resume"</a>. To see an example of a resume this generates, <a href="example.pdf" target="_blank">click here</a>.<br/><br/><b>Here are a few things in mind when using this app:</b>
 
 					<ul>
 						<li>This has been tested on Chrome only, but should work on Firefox as well.</li>
 						<li>Pay attention to spelling and capitalization. I don't fix that for you.</li>
-						<li>The data is saved locally using LocalStorage, so you can come back and finish later. Click <a href="#" id="clear_localstorage">here</a> to clear all fields.</li>
+						<li>Refreshing the page will clear everything if you mess up.</li>
+						<li>So you don't lose any data, it would be best to type everything into a word document on your computer, then paste it in here.</li>
 						<li>When you're saving your resume, you can either print it directly, or change the destination to save as a PDF. Detailed instructions <a href="http://www.superpctricks.com/2013/11/how-to-save-whole-web-page-as-pdf-in.html" target="_blank">here</a>.
 						<li>If you know how, you can format the textareas using HTML tags.</li> 
 						<li><span style="background-color:#FFF508; font-weight:700;">No data you enter here is stored or sent anywhere. I promise!</span></li> 
@@ -63,8 +69,7 @@
 				<li id="tab_3"><i class="ion-ios-briefcase"></i> Work Experience</li>
 				<li id="tab_4"><i class="ion-ios-book"></i> Education</li>
 				<li id="tab_5"><i class="ion-ios-list"></i> Skills</li>
-				<li id="tab_6"><i class="ion-ios-gear"></i> Settings</li>
-				<li id="tab_7"><i class="ion-ios-copy"></i> Generate Resume</li>
+				<li id="tab_6"><i class="ion-ios-copy"></i> Generate Resume</li>
 			</ul>
 		</aside>
 
@@ -76,14 +81,7 @@
 
 			<section id="personal_information" class="animated pulse">
 				<div class="personal_block">
-					<h2 id="personal_desc">Hey there, what's your full <b>name</b>?</h2>
-                    <input type="text" id="personal-name-input" placeholder="John Smith">
-					<input type="text" id="personal-email-input" placeholder="john@johnsmith.com" style="text-transform:none;">
-					<input type="text" id="personal-phone-input" placeholder="760-555-4824">
-					<input type="text" id="personal-location-input" placeholder="Madison, WI">
-					<input type="text" id="personal-link-input" placeholder="http://linkedin.com/in/mitchsamuels" style="text-transform:none;">
-
-                    <button class="next" id="personal_continue">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+					<h2>We moved to <b>http://ineedaresu.me</b><br/><br/>We are redirecting you now!</h2>
 				</div>
 			</section>
 
@@ -148,18 +146,13 @@
 
 
 
-			<section id="settings" class="animated pulse">
-				<h2 style="padding-bottom:15px;">Only one setting for now: tell me, do you want a more serious <span id="seriffont">serif font</span> or a sleeker <b>Sans-serif font</b>?</h2>
-				<label id="seriflabel"><input type="checkbox" id="serifyes" /> <i class="ion-ios-arrow-thin-left"></i> Check for serif font</label>
-				<button id="settings_continue">Cool. Let's make it!</button>
-			</section>
-
-
 			<section id="finished" class="animated pulse">
-				<h2 style="padding-bottom:15px;"><b>Lastly, here are some tips to make your resume look best:</b><br/><br/>On Chrome, after you click the button below, you can save it as a PDF by clicking the "Change" button.<br/><img src="src/chromepdf.png" style="padding:35px;"><br/>Remove page headers and footers by click <b>"more settings"</b> then uncheck the box.<br/><img src="src/chromeheader.png" style="position:relative; top:20px;"></h2>
-				<button id="generate">Generate PDF</button>
-			</section>
+				<h2 style="padding-bottom:15px;">Before I generate your resume, tell me, do you want a more serious <span id="seriffont">serif font</span> or a sleeker <b>Sans-serif font</b>?</h2>
 
+				<label id="seriflabel"><input type="checkbox" id="serifyes" /> <i class="ion-ios-arrow-thin-left"></i> Check for serif font</label>
+
+				<button id="generate">create my resume</button>
+			</section>
 
 			<div id="branding">Made by Mitchs.co</div>
 

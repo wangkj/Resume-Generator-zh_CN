@@ -1,4 +1,3 @@
-/*Body Styles*/
 body{
 	width:100%;
 	height: 100%;
@@ -9,15 +8,184 @@ body{
 }
 
 
-/*UNIVERSALS & FIXES*/
+
+/*UNIVERSAL FIXES*/
 input:focus, input:active { outline: none; }
 * {
     outline: none;
+    
 }
-/*No prev button for now*/
-.prev{
+input{
+	width:90%;
+	margin-left: 5%;
+	margin-top: 0px;
+	margin-bottom: 15px; margin-top: 20px;
+	font-size: 14pt;
+	font-weight: 300;
+	font-family: 'Lato', sans-serif;
+	padding: 14px;
+	background-color: #fff;
+}input:focus{
+	border:1px solid rgba(100,110,142,0.5);
+	background-color: rgba(20,20,20,0.005);
+}
+textarea{
+	width:90%;
+	margin-left: 5%;
+	margin-top: 0px;
+	margin-bottom: 15px;
+	font-size: 12pt;
+	font-weight: 300;
+	font-family: 'Lato', sans-serif;
+	padding: 10px;
+	letter-spacing: 1px;
+	background-color: #fff;
+	border: 1px solid rgba(0,0,0,0.2);
+	min-height: 180px;
+}textarea::-webkit-input-placeholder{font-weight:300;}
+textarea:focus{
+	border:1px solid rgba(100,110,142,0.5);
+	background-color: rgba(20,20,20,0.005);
+}
+
+a{
+	color:#f5414c;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+
+
+/*Introduction*/
+#intro_wrapper{
+	position: fixed;
+	width:100%; height:100%;
+	background-color: rgba(43,47,62,0.9);
+	z-index: 50000000;
 	display: none;
+	overflow-y: scroll;
 }
+	#intro_inner{
+		box-sizing:border-box;
+		padding: 25px;
+		width:70%;
+		min-height: 300px;
+		margin-top: -110%; margin-bottom: 75px;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		background-color: #fff;
+		margin-left: 15%;
+		/*color:#667090;*/
+		color: rgba(0,0,0,0.8);
+		letter-spacing: 1px;
+		font-weight: 300;
+		margin-bottom: 75px;
+	}
+		#intro_inner h1{
+			font-weight: 300;
+			text-align: center;
+			padding: 14px;
+			text-transform: uppercase;
+			margin-bottom: 0;
+			padding-top: 0px;
+		}
+		#intro_inner h2{
+			font-weight: 300;
+			text-align: center;
+			font-size: 11pt;
+			text-transform: uppercase;
+			margin: 0 auto;
+			padding: 0;
+		}
+		#donate{
+			font-weight: 400;
+			letter-spacing: 1px;
+			opacity: 0.7;
+			text-align: center;
+			text-transform: uppercase;
+			margin: 0 auto;
+			padding: 0;
+			font-size: 8pt !important;
+			position: relative;
+			top: 9px;
+		}
+			#donate a{
+				font-weight: 700;
+			}
+		#intro_inner p{
+			padding-left: 15px; padding-right: 15px;
+			font-size: 11pt;
+		}
+			#intro_inner li{
+				padding-top: 3px; padding-bottom: 3px;
+				font-size: 11pt;
+			}
+
+			#close_intro{
+				width: 100%;
+				background: #f5414c;
+				background: linear-gradient(to bottom, #f5414c 0%,#ff2c5e 100%);
+				color:#93959E;
+				border: none;
+				padding: 20px;
+				font-size: 14pt;
+				font-weight: 600;
+				font-family: 'Lato', sans-serif;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				transition:0.2s;
+				color:#fff;
+			}
+				#close_intro:hover{
+					transition:0.2s;
+					cursor: pointer;
+					color: #fff;
+					background: #f5414c;
+					background: linear-gradient(to bottom, #ff2c5e 0%,#f5414c 100%);
+				}
+	#info_bar{
+		width: 300px;
+		position: fixed;
+		z-index: 500000;
+		bottom: 0; left: 0;
+		color: #fff;
+		font-size: 9pt;
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		padding-top: 2px;
+		text-align: center;
+		height:55px;
+		padding: 10px;
+		opacity: 1;
+		transition:0.2s;
+		line-height: 1.5em;
+		box-sizing:border-box;
+		opacity: 0.8;
+	}
+		#info_bar:hover{
+			cursor: pointer;
+			opacity: 0.6;
+			transition:0.2s;
+		}
+
+	#branding{
+		width: calc(100% - 300px);
+		text-align: center;
+		position: fixed;
+		bottom: 8px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 400;
+		opacity: 0.35;
+		transition:0.3s;
+		font-size: 9pt;
+	}
+		#branding:hover{
+			cursor: pointer;
+			opacity: 0.45;
+		}
+
 
 
 /*Sidebar*/
@@ -29,15 +197,16 @@ aside{
 	box-sizing: border-box;
 	background-color: #2B2F3E;
 	color:#93959E;
-	overflow: scroll;
 }
 	aside h1{
 		width:100%;
 		text-align: center;
 		font-weight: 100;
-		font-size: 45pt;
-		text-transform: uppercase;
-		letter-spacing: -2px;
+		font-size: 26pt;
+		text-transform: lowercase;
+		letter-spacing:0px;
+		padding: 0; margin: 0 auto;
+		padding-bottom: 30px; padding-top: 30px;
 	}
 	aside ul{
 		list-style-type: none;
@@ -45,7 +214,7 @@ aside{
 		margin: 0 auto;
 	}
 		aside ul li{
-			padding: 22px 30px 22px 30px;
+			padding: 18px 30px 18px 30px;
 			text-transform: uppercase;
 			letter-spacing: 1px;
 			font-weight: 400;
@@ -71,16 +240,20 @@ aside{
 			}
 
 
-/*Right hand box, grey background, contains dialogs - everything but sidebar*/
+
+
 article{
 	width: calc(100% - 300px);
 	height:100%;
 	position: fixed; top:0px; right: 0px;
 	background-color: #f9f9f9;
-	box-shadow: -6px 0px 15px -4px rgba(0,0,0,0.39);
+	box-shadow: -6px 0px 15px -4px rgba(0,0,0,0.99);
 	overflow: scroll;
 	z-index: 500000;
 }
+	#personal-email-input, #personal-phone-input, #personal-location-input, #personal-link-input{
+		display: none;
+	}
 
 	article section{
 		width:70%; height:auto;
@@ -93,6 +266,17 @@ article{
 		box-sizing:border-box;
 		padding: 25px;
 		margin-bottom: 75px;
+		overflow: hidden;
+		z-index: 5000;
+	}
+
+	#personal_information, #personal_statement, #work_experience, #education, #skills, #settings, #finished{
+		-moz-animation-duration: 0.55s;
+    	-webkit-animation-duration: 0.55s;
+    	animation-duration: 0.55s;
+	}
+	#personal_information, #personal_statement, #work_experience, #education, #skills, #settings, #finished{
+		display: none;
 	}
 
 		article section h1{
@@ -109,21 +293,17 @@ article{
 			text-align: center;
 			letter-spacing: 2px;
 			text-transform: uppercase;
-			font-size: 14pt;
+			font-size: 13pt;
+			line-height: 1.6em;
 		}
 
-
-	section nav{
-		width:100%;
-		overflow: hidden;
-		padding-top: 15px;
-	}
-		section nav button{
+		section .next{
 			width:50%;
-			float: left;
+			float: right;
 			border:none; border-radius: 0;
 			box-sizing:border-box;
 			padding: 18px;
+			padding-right: 5%;
 			background-color: transparent;
 			text-transform: uppercase;
 			font-weight: 400;
@@ -131,18 +311,13 @@ article{
 			font-size: 10pt;
 			color:#626c8d;
 			transition:0.2s;
+			text-align: right;
+			margin-top: 10px;
 		}
-			section nav button:hover{
+			section .next:hover{
 				color:#f5414c;
 				transition:0.2s;
 				cursor: pointer;
-			}
-			section nav button:nth-child(1){
-				text-align: left;
-			}
-			section nav button:nth-child(2){
-				text-align: right;
-				float: right;
 			}
 
 
@@ -162,255 +337,208 @@ hr{
 
 
 
-/*Personal information specific*/
-#personal_information input{
-	width:90%;
-	margin-left: 5%;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	font-size: 22pt;
-	font-weight: 300;
-	font-family: 'Lato', sans-serif;
-	padding: 10px;
-	text-transform: capitalize;
-	background-color: #fff;
-}
-	.personal_block:nth-child(2), .personal_block:nth-child(3), .personal_block:nth-child(4), .personal_block:nth-child(5), .personal_block:nth-child(6){
-		display: none;
-	}
-	#location_personal_overview h2{
-		line-height: 1.6em;
-	}
 
 
-/*Statement specific*/
-#personal_statement{
-	display: none;
-}
-	#personal_statement textarea{
-		width:100%; height: auto;
-		min-height: 260px;
-		box-sizing:border-box;
-		padding: 10px;
-		font-size: 12pt;
-		font-weight: 300;
-		letter-spacing: 1px;
-		line-height: 1.65em;
-		color: rgba(0,0,0,0.9);
-		border: 1px solid rgba(43,47,62,0.2);
-	}
-		#statement_feedback{
-			font-weight: 400;
-			color:rgba(43,47,62,0.4);
-			font-size: 9pt;
-			padding-top: 6px;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			width: 100%;
-			text-align: center;
-		}#statement_remaining{font-weight: 900; background-color: #FFF508;}
+
+/*Personal statement specific*/
+#statement_feedback{
+	font-weight: 400;
+	color:rgba(43,47,62,0.4);
+	font-size: 9pt;
+	padding-top: 6px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	width: 100%;
+	text-align: center;
+}#statement_remaining{font-weight: 900; background-color: #FFF508;}
+
 
 
 /*Work Experience Specific*/
-#work_experience{
-	display: none;
-	margin-bottom: 75px;
+#work_experience input{
+	margin-top: 0px;
 }
-	#work_experience input{
-		width:90%;
-		margin-left: 5%;
-		margin-top: 0px;
-		margin-bottom: 15px;
-		font-size: 16pt;
-		font-weight: 300;
-		font-family: 'Lato', sans-serif;
-		padding: 10px;
-		text-transform: capitalize;
-		background-color: #fff;
-	}
-	#work_experience textarea{
-		width:90%;
-		margin-left: 5%;
-		margin-top: 0px;
-		margin-bottom: 15px;
-		font-size: 12pt;
-		font-weight: 300;
-		font-family: 'Lato', sans-serif;
-		padding: 10px;
-		letter-spacing: 1px;
-		background-color: #fff;
-		border: 1px solid rgba(0,0,0,0.2);
-		min-height: 180px;
-	}
-	#desc_formatting{
-		font-size: 9pt;
-		letter-spacing: 1px;
-		color:rgba(0,0,0,0.5);
-		width:100%;
-		text-align: center; text-transform: uppercase;
-		font-weight: 400;
-	}
-
-	.add_job{
-		width: 100%;
-		outline: none;
-		border:none;
-		border-radius: 0;
-		padding: 18px; padding-bottom: 0px;
-		margin-top: 14px;
-		background-color: transparent;
-		text-transform: uppercase;
-		font-weight: 400;
-		letter-spacing: 1px;
-		font-size: 10pt;
-		color:#626c8d;
+#work_experience h2{
+	padding-bottom: 15px;
+}
+#desc_formatting{
+	font-size: 9pt;
+	letter-spacing: 1px;
+	color:rgba(0,0,0,0.5);
+	width:100%;
+	text-align: center; text-transform: uppercase;
+	font-weight: 400;
+}
+#add_job{
+	width:50%;
+	float: left;
+	border:none; border-radius: 0;
+	box-sizing:border-box;
+	padding: 18px;
+	padding-right: 5%;
+	background-color: transparent;
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size: 10pt;
+	color:#626c8d;
+	transition:0.2s;
+	text-align: left;
+	margin-top: 10px;
+}
+	#add_job:hover{
+		color:#f5414c;
 		transition:0.2s;
+		cursor: pointer;
 	}
-		.add_job:hover{
-			cursor: pointer;
-			color: #f5414c;
-			transition:0.2s;
+	#add_job:disabled{
+		text-decoration: line-through;
+		opacity: 0.3;
+	}
+		#add_job:disabled:hover{
+			color:inherit;
+			cursor: not-allowed;
 		}
+
 
 
 /*Education specifics*/
-#education{
-	display: none;
-	
+#education input{
+	margin-top: 0px;
 }
-	#education input{
-		width:90%;
-		margin-left: 5%;
-		margin-top: 0px;
-		margin-bottom: 15px;
-		font-size: 16pt;
-		font-weight: 300;
-		font-family: 'Lato', sans-serif;
-		padding: 10px;
-		text-transform: capitalize;
-		background-color: #fff;
-	}
-	#education textarea{
-		width:90%;
-		margin-left: 5%;
-		margin-top: 0px;
-		margin-bottom: 15px;
-		font-size: 12pt;
-		font-weight: 300;
-		font-family: 'Lato', sans-serif;
-		padding: 10px;
-		letter-spacing: 1px;
-		background-color: #fff;
-		border: 1px solid rgba(0,0,0,0.2);
-		min-height: 180px;
-	}
-	#desc_formatting{
-		font-size: 9pt;
-		letter-spacing: 1px;
-		color:rgba(0,0,0,0.5);
-		width:100%;
-		text-align: center; text-transform: uppercase;
-		font-weight: 400;
-	}
+#education h2{
+	padding-bottom: 15px;
+}
 
-	.add_school{
-		width: 100%;
-		outline: none;
-		border:none;
-		border-radius: 0;
-		padding: 18px; padding-bottom: 0px; padding-top: 12px;
-		margin-top: 10px;
-		background-color: transparent;
-		text-transform: uppercase;
-		font-weight: 400;
-		letter-spacing: 1px;
-		font-size: 10pt;
-		color:#626c8d;
+#desc_formatting{
+	font-size: 9pt;
+	letter-spacing: 1px;
+	color:rgba(0,0,0,0.5);
+	width:100%;
+	text-align: center; text-transform: uppercase;
+	font-weight: 400;
+}
+
+#add_school{
+	width:50%;
+	float: left;
+	border:none; border-radius: 0;
+	box-sizing:border-box;
+	padding: 18px;
+	padding-right: 5%;
+	background-color: transparent;
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size: 10pt;
+	color:#626c8d;
+	transition:0.2s;
+	text-align: left;
+	margin-top: 10px;
+}
+	#add_school:hover{
+		color:#f5414c;
 		transition:0.2s;
+		cursor: pointer;
 	}
-		.add_school:hover{
-			cursor: pointer;
-			color: #f5414c;
-			transition:0.2s;
+	#add_school:disabled{
+		text-decoration: line-through;
+		opacity: 0.3;
+	}
+		#add_school:disabled:hover{
+			color:inherit;
+			cursor: not-allowed;
 		}
+
+
+
 
 
 
 /*Skills specifics*/
-#skills{
-	display: none;
-	margin-bottom: 75px;
+#skills input{
+	margin-top: 0px;
 }
-	#skills input{
-		width:90%;
-		margin-left: 5%;
-		margin-top: 0px;
-		margin-bottom: 15px;
-		font-size: 16pt;
-		font-weight: 300;
-		font-family: 'Lato', sans-serif;
-		padding: 10px;
-		text-transform: capitalize;
-		background-color: #fff;
-	}
-	#education textarea{
-		width:90%;
-		margin-left: 5%;
-		margin-top: 0px;
-		margin-bottom: 15px;
-		font-size: 12pt;
-		font-weight: 300;
-		font-family: 'Lato', sans-serif;
-		padding: 10px;
-		letter-spacing: 1px;
-		background-color: #fff;
-		border: 1px solid rgba(0,0,0,0.2);
-		min-height: 180px;
-	}
+#skills h2{
+	padding-bottom: 15px;
+}
 
 
 
 
-#finished{
+
+
+#finished, #settings{
 	text-align: center;
 	display: none;
 }
-
-	#generate{
-		height: 100px;
-		width:100px;
-		text-align: center;
-		line-height: 95px;
-		font-size: 16pt;
-		font-weight: 900;
-		font-family: 'Lato', sans-serif;
-		background-color: #f5414c;
-		color:#fff;
-		border-radius: 50%;
-		border: 1px solid #eef4f4;
-		transition: background-color 0.5s ease;
+	#seriffont{
+		font-family: 'Lora', serif;
+		font-weight: 700;
 	}
-		#generate:hover{
-			cursor: pointer;
-			background-color: #2c6bff;
-			transition: background-color 0.5s ease;
+		#serifyes{
+			display: inline;
+		}
+		#seriflabel {
+		    display: block;
+		    padding-left: 15px;
+		    text-indent: -15px;
+		}
+		#serifyes {
+		    width: 15px;
+		    height: 15px;
+		    padding: 0;
+		    margin:0;
+		    position: relative;
+		    top: 1px;
+		    *overflow: hidden;
 		}
 
+#generate, #settings_continue{
+	width:100%;
+	text-align: center;
+	font-size: 12pt;
+	font-weight: 300;
+	padding: 10px;
+	padding-top: 13px; padding-bottom: 13px;
+	margin-top: 26px;
+	font-family: 'Lato', sans-serif;
+	background-color: #f5414c;
+	letter-spacing: 2px;
+	color:#fff;
+	border: 1px solid #eef4f4;
+	transition: background-color 0.5s ease;
+	text-transform: uppercase;
+	transition: 0.5s ease;
+}
+	#generate:hover, #final_inst:hover{
+		cursor: pointer;
+		transition: 0.5s ease;
+		opacity: 0.8;
+	}
 
 
-/*Styling for the actual generated PDF*/
+
+
+#final_instructions{
+	display: none;
+}#final_instructions img{
+	padding: 15px;
+	max-width: 100%;
+}
+
 #print_page{
-	position: fixed;
 	padding: 0; margin: 0 auto;
 	top:0px; left:0%;
-	width:7.23in; height:11.69in;
+	width:7.23in; 
 	mso-header-margin:.5in; mso-footer-margin:.5in; mso-paper-source:0;
 	z-index: 5000;
 	background-color: #fff;
 	text-align: center;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-	/*display: none;*/
+	display: none;
+	overflow: visible !important;
 }
 	#pdf_name{
 		width: 100%;
@@ -432,12 +560,11 @@ hr{
 		color: transparent;
 		background-color: transparent;
 		border: 0px solid #000;
-		border-bottom: 1px solid rgba(0,0,0,0.1);
+		border-bottom: 1px solid rgba(0,0,0,0.075);
 		/*border-bottom: 1px solid #eef4f4;*/
 	}
 
 	#pdf_statement{
-		font-family: 'Lato';
 		text-align: justify !important;
 		line-height: 1.6em;
 		text-align: left;
@@ -453,11 +580,11 @@ hr{
 		letter-spacing: 1px;
 	}
 
-	#pdf_job1{
+	#pdf_job1, #pdf_job2, #pdf_job3{
 		text-align: left;
 		font-weight: 700;
 	}
-		#pdf_job1_emp_desc{
+		#pdf_job1_emp_desc, #pdf_job2_emp_desc, #pdf_job3_emp_desc{
 			font-weight: 300;
 			font-size: 10pt;
 			line-height: 1.5em;
@@ -465,7 +592,7 @@ hr{
 			padding-top: 5px;
 			padding-bottom: 5px;
 		}
-		#pdf_job1_job_desc{
+		#pdf_job1_job_desc, #pdf_job2_job_desc, #pdf_job3_job_desc{
 			font-weight: 300;
 			font-size: 10pt;
 			line-height: 1.5em;
@@ -473,8 +600,11 @@ hr{
 			padding-top: 5px;
 			padding-bottom: 5px;
 		}
-		#job1_title{
+		#job1_title, #job2_title, #job3_title{
 			font-size: 10pt;
+		}
+		#pdf_job2, #pdf_job3{
+			padding-top: 15px;
 		}
 
 	#print_page h3{
@@ -490,33 +620,40 @@ hr{
 
 
 
-@media print {
-	aside, article{
-		display: none;
-	}
-}
 
 
 
-/*Awesome link underlining, unused for now*/
-h6 > a {
+
+
+
+
+
+
+
+
+
+
+
+
+/*Awesome link underlining*/
+p > a {
   position: relative;
-  color: #000;
+  color: #f5414c;
   text-decoration: none;
 }
 
-h6 > a:hover {
-  color: #000;
+p > a:hover {
+  color: #f5414c;
 }
 
-h6 > a:before {
+p > a:before {
   content: "";
   position: absolute;
   width: 100%;
-  height: 2px;
-  bottom: 0;
+  height: 1px;
+  bottom: -2;
   left: 0;
-  background-color: #000;
+  background-color: #f5414c;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -524,8 +661,18 @@ h6 > a:before {
   transition: all 0.3s ease-in-out 0s;
 }
 
-h6 > a:hover:before {
+p > a:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+
+@media print {
+	aside, article, #info_bar, #intro_wrapper{
+		display: none;
+	}
+	#print_page{
+		display: block;
+	}
 }
