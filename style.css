@@ -674,5 +674,12 @@ p > a:hover:before {
 	}
 	#print_page{
 		display: block;
+		padding: 10mm;
+		box-sizing:border-box;
 	}
+
+}
+@page {
+	size: auto;   
+	margin: 0mm; 
 }

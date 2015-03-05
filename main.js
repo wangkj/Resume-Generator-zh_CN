@@ -254,7 +254,7 @@ function generatePDF(){
 	$("#job_1_time").html(user_job_time);
 	$("#pdf_job1_emp_desc").html(user_emp_desc);
 	$("#job1_title").html(user_job_title);
-	user_job_desc_split = user_job_desc.replace(/\*/g, ' \u2219');
+	user_job_desc_split = user_job_desc.replace(/\*/g, '&nbsp; &nbsp; \u2219');
 	user_job_desc_lines = user_job_desc_split.replace(/\n\r?/g, '<br/>');
 	$("#pdf_job1_job_desc").html(user_job_desc_lines);
 	$("#job_2_employer").html(user_employer2);
@@ -262,7 +262,7 @@ function generatePDF(){
 	$("#job_2_time").html(user_job_time2);
 	$("#pdf_job2_emp_desc").html(user_emp_desc2);
 	$("#job2_title").html(user_job_title2);
-	user_job_desc_split2 = user_job_desc2.replace(/\*/g, ' \u2219');
+	user_job_desc_split2 = user_job_desc2.replace(/\*/g, '&nbsp; &nbsp; \u2219');
 	user_job_desc_lines2 = user_job_desc_split2.replace(/\n\r?/g, '<br/>');
 	$("#pdf_job2_job_desc").html(user_job_desc_lines2);
 	$("#job_3_employer").html(user_employer3);
@@ -270,7 +270,7 @@ function generatePDF(){
 	$("#job_3_time").html(user_job_time3);
 	$("#pdf_job3_emp_desc").html(user_emp_desc3);
 	$("#job3_title").html(user_job_title3);
-	user_job_desc_split3 = user_job_desc3.replace(/\*/g, ' \u2219');
+	user_job_desc_split3 = user_job_desc3.replace(/\*/g, '&nbsp; &nbsp; \u2219');
 	user_job_desc_lines3 = user_job_desc_split3.replace(/\n\r?/g, '<br/>');
 	$("#pdf_job3_job_desc").html(user_job_desc_lines3);
 	
