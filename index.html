@@ -26,30 +26,10 @@
 	</head>
 	<body>
 
-		<div id="info_bar">Click here to learn about this app!<br/>We don't keep any data.</div>
 
 
-		<div id="intro_wrapper">
-			<div id="intro_inner">
-				<p>
-					This creates a super slick and simple resume based off <a href="http://www.businessinsider.com/why-this-is-an-excellent-resume-2013-11" target="_blank">Business Insider's "Excellent Resume"</a>. To see an example of a resume this generates, <a href="src/example.pdf" target="_blank">click here</a>.<br/><br/><b>Here are a few things in mind when using this app:</b>
 
-					<ul>
-						<li>This has been tested on Chrome only, but should work on Firefox as well.</li>
-						<li>Pay attention to spelling and capitalization. I don't fix that for you.</li>
-						<li>The data is saved locally using LocalStorage, so you can come back and finish later. Click <a href="#" id="clear_localstorage">here</a> to clear all fields.</li>
-						<li>When you're saving your resume, you can either print it directly, or change the destination to save as a PDF. Detailed instructions <a href="http://www.superpctricks.com/2013/11/how-to-save-whole-web-page-as-pdf-in.html" target="_blank">here</a>.
-						<li>If you know how, you can format the textareas using HTML tags.</li> 
-						<li><span style="background-color:#FFF508; font-weight:700;">No data you enter here is stored or sent anywhere. I promise!</span></li> 
-					</ul>
-
-					<br/>
-
-					<button id="close_intro">Interesting. Take me back.</button>
-
-					<br/><br/>
-
-					<p id="donate">If you get a job because of this awesome tool, consider <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mitch%40mitchs%2eco&lc=US&item_name=Donation%20to%20Resumaker&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest" target="_blank">donating</a>:)</p>
+<!-- <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mitch%40mitchs%2eco&lc=US&item_name=Donation%20to%20Resumaker&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest" target="_blank"></a> -->
 
 				</p>
 			</div>
@@ -58,112 +38,112 @@
 
 
 		<aside>
-			<h1><b>i</b>need<b>a</b>resu.me</h1>
+			<h1><i class="ion-document"></i><br/><b>i</b>need<b>a</b>resu.me</h1>
 			<ul>
-				<li id="tab_1" class="activated"><i class="ion-ios-body"></i> Personal Information</li>
+				<li id="tab_intro" class="activated"><i class="ion-ios-information"></i> Introduction</li>
+				<li id="tab_1"><i class="ion-ios-body"></i> Personal Information</li>
 				<li id="tab_2"><i class="ion-ios-chatbubble"></i> Statement</li>
 				<li id="tab_3"><i class="ion-ios-briefcase"></i> Work Experience</li>
 				<li id="tab_4"><i class="ion-ios-book"></i> Education</li>
 				<li id="tab_5"><i class="ion-ios-list"></i> Skills</li>
-				<li id="tab_6"><i class="ion-ios-gear"></i> Settings</li>
-				<li id="tab_7"><i class="ion-ios-copy"></i> Generate Resume</li>
+				<li id="tab_6"><i class="ion-checkmark-circled"></i> Finish</li>
 			</ul>
+			<div id="branding">made with <i class="ion-heart"></i> by mitchs.co</div>
 		</aside>
 
 
 
-		<article>	
+		<article>
 
 
 
-			<section id="personal_information" class="animated pulse">
-				<div class="personal_block">
-					<h2 id="personal_desc">Hey there, what's your full <b>name</b>?</h2>
-                    <input type="text" id="personal-name-input" placeholder="John Smith">
-					<input type="text" id="personal-email-input" placeholder="john@johnsmith.com" style="text-transform:none;">
-					<input type="text" id="personal-phone-input" placeholder="760-555-4824">
-					<input type="text" id="personal-location-input" placeholder="Madison, WI">
-					<input type="text" id="personal-link-input" placeholder="http://linkedin.com/in/mitchsamuels" style="text-transform:none;">
+			<progress value="0" max="100" id="progressbar"></progress>	
 
-                    <button class="next" id="personal_continue">Continue <i class="ion-ios-arrow-thin-right"></i></button>
-				</div>
+
+			<section id="intro_box" class="animated pulse">
+				<h4><i class="ion-document"></i><br/><b>i</b>need<b>a</b>resu.me</h4>
+				<h5>create a R&eacute;sum&eacute; in seconds</h5>
+				<ul>
+					<li><h1>Super Simple</h1><h2>Easy-to-follow instructions every step of the way. Navigate with the <i class="ion-arrow-left-c"></i> and <i class="ion-arrow-right-c"></i> keys or by using the enter button, and follow your progress towards completion with a bar at the top of the screen.</h2></li>
+					<li><h1>Chrome Compatible</h1><h2>Compatible with Chrome Browser on Windows, Mac, and Linux. It might work on other browsers, but probably not. Definitely wont work on mobile.</h2></li>
+					<li><h1>Take Your Time</h1><h2>We temporarily store your data locally so you can come back and finish</h2></li>
+					<li><h1>Private and Secure</h1><h2>Nothing you enter is ever sent to us or saved, so nobody sees it except you</h2></li>
+					<li><h1>Always Free</h1><h2>We just don't feel like charging.<br/>View an example of a resume it generates <a href="src/example.pdf">here</a>.</h2></li>
+				</ul>
+				<button id="intro_reset">Start Over <i class="ion-refresh"></i></button>
+				<button id="intro_begin">Begin <i class="ion-arrow-right-c"></i></button>
 			</section>
 
 
 
-			<section id="personal_statement" class="animated pulse">
-				<h2>Would you like to provide a personal statement?<br/>I wouldn't judge if you left it blank.</h2>
-				<textarea id="personal_statement_input" maxlength="800" placeholder="I would love to work here because I heard you have the gnarliest lunch buffet..."></textarea>
-				<div id="statement_feedback">For your own good, you only have <span id="statement_remaining"></span> characters left.</div>
-				<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
-			</section>
+			<section id="body_wrap" class="animated pulse">
+					<h2 id="instructions"></h2>
 
+					<!--Personal information-->
+                    <input type="text" class="hideall" id="personal_name_input" placeholder="John Smith">
+					<input type="text" class="hideall" id="personal_email_input" placeholder="john@johnsmith.com" style="text-transform:none;">
+					<input type="text" class="hideall" id="personal_phone_input" placeholder="760-555-4824">
+					<input type="text" class="hideall" id="personal_location_input" placeholder="Madison, WI">
+					<input type="text" class="hideall" id="personal_link_input" placeholder="http://linkedin.com/in/mitchsamuels" style="text-transform:none;">
 
+					<!--Statement-->
+					<span id="statement" class="hideall">
+						<br/>
+						<textarea id="personal_statement_input" maxlength="800" placeholder="I would love to work here because I heard you have the gnarliest lunch buffet..."></textarea>
+						<div id="statement_feedback">For your own good, you only have <span id="statement_remaining"></span> characters left.</div>
+					</span>
 
-			<section id="work_experience" class="animated pulse">
-				<h2 id="work_header">Lets add your work experience.</h2>
-				<label>Employer:</label>
-				<input type="text" id="employer" placeholder="Google, Inc.">
-				<label>Location:</label>
-				<input type="text" id="job_location" placeholder="Mountain View, CA">
-				<label>Time:</label>
-				<input type="text" id="job_time" placeholder="July 2014 - Present">
-				<label>Short(ish) Employer Description:</label>
-				<input type="text" id="employer_desc" placeholder="Google is the leading search engine...">
-				<hr/>
-				<label>Job Title:</label>
-				<input type="text" id="title" placeholder="Front End Engineer">
-				<label>Job Description:</label>
-				<textarea id="job_desc" placeholder="Responsible for the development of Google.com, nothing serious."></textarea>
-				<div id="desc_formatting">Hint: an asterisk ( * ) will turn into a bullet point!</div>
+					<!--Work Experience-->
+					<span id="work" class="hideall">
+						<br/>
+						<label>Employer:</label><input type="text" id="employer" placeholder="Google, Inc.">
+						<label>Location:</label><input type="text" id="job_location" placeholder="Mountain View, CA">
+						<label>Time:</label><input type="text" id="job_time" placeholder="July 2014 - Present">
+						<label>Short(ish) Employer Description:</label><input type="text" id="employer_desc" placeholder="Google is the leading search engine...">
+						<hr/>
+						<label>Job Title:</label><input type="text" id="title" placeholder="Front End Engineer">
+						<label>Job Description:</label><textarea id="job_desc" placeholder="Responsible for the development of Google.com, nothing serious."></textarea>
+						<div id="desc_formatting">Hint: an asterisk ( * ) will turn into a bullet point!<br/><small>HTML Markup is also supported</small></div>
+						<button id="new_job"><i class="ion-plus"></i> Add job</button>
+					</span>
 
-				<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
-				<button id="add_job">Add another job <i class="ion-ios-plus-empty"></i></button>
+					<!-- School -->
+					<span id="schooling">
+						<br/>
+						<label>Degree:</label><input type="text" id="degree" placeholder="Bachelor of Science in Computer Science">
+						<label>School:</label><input type="text" id="school" placeholder="University of Wisconsin-Madison">
+						<label>Location:</label><input type="text" id="school_location" placeholder="Madison, WI">
+						<label>Graduation Year:</label><input type="text" id="graduation" placeholder="2015">
+						<button id="new_school"><i class="ion-plus"></i> Add School</button>
+					</span>
 
-			</section>
+					<!-- Skills -->
+					<span id="skills">
+						<br/>
+						<label>Skills (Seperate with commas):</label><input type="text" id="skillsinput" placeholder="HTML, CSS, Javascript, Adobe Suite">
+					</span>
 
-
-
-			<section id="education" class="animated pulse">
-				<h2 id="school_header">"Is our children learning?" - G.W. Bush</h2>
-				<label>Degree:</label>
-				<input type="text" id="degree" placeholder="Bachelor of Science in Computer Science">
-				<label>School:</label>
-				<input type="text" id="school" placeholder="University of Wisconsin-Madison">
-				<label>Location:</label>
-				<input type="text" id="school_location" placeholder="Madison, WI">
-				<label>Graduation Year:</label>
-				<input type="text" id="graduation" placeholder="2015">
-
-				<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
-				<button id="add_school">Add another school <i class="ion-ios-plus-empty"></i></button>
-
-			</section>
-
-
-			<section id="skills" class="animated pulse">
-				<h2 style="padding-bottom:15px;">Can you actually do anything?</h2>
-				<label>Skills (Seperate with commas):</label>
-				<input type="text" id="skillsinput" placeholder="HTML, CSS, Javascript, Adobe Suite">
-				<button class="next">Continue <i class="ion-ios-arrow-thin-right"></i></button>
+                    <button id="next_button">Continue <i class="ion-arrow-right-c"></i></button>
 			</section>
 
 
 
 			<section id="settings" class="animated pulse">
-				<h2 style="padding-bottom:15px;">Only one setting for now: tell me, do you want a more serious <span id="seriffont">serif font</span> or a sleeker <b>Sans-serif font</b>?</h2>
+				<h2 style="padding-bottom:15px;">Choose your settings:<br/><br/>Only one setting for now: tell me, do you want a more serious <span id="seriffont">serif font</span> or a sleeker <b>Sans-serif font</b>?</h2>
 				<label id="seriflabel"><input type="checkbox" id="serifyes" /> <i class="ion-ios-arrow-thin-left"></i> Check for serif font</label>
-				<button id="settings_continue">Cool. Let's make it!</button>
+				<button id="generate">Done, make my resume!</button>
 			</section>
 
 
-			<section id="finished" class="animated pulse">
-				<h2 style="padding-bottom:15px;"><b>Lastly, here are some tips to make your resume look best:</b><br/><br/>On Chrome, after you click the button below, you can save it as a PDF by clicking the "Change" button.<br/><img src="src/chromepdf.png" style="padding:35px;"><br/>Remove page headers and footers by click <b>"more settings"</b> then uncheck the box.<br/><img src="src/chromeheader.png" style="position:relative; top:20px;"></h2>
-				<button id="generate">Generate PDF</button>
+
+			<section id="thanks" class="animated pulse">
+				<h2 style="padding-bottom:15px;">Thank you!</h2>
+				<p>If this app helped you out, please say thanks by spreading the word on Twitter or Facebook!<br/><br/>If you have feedback or suggestions, please contact me through my <a href="http://mitchs.co" target="_blank">website</a>.<br/><br/>Follow development of this on my <a href="https://github.com/mitchas" target="_blank">GitHub</a></p>
+				<button id="backtoedit">Return to editing <i class="ion-compose"></i></button>
 			</section>
 
 
-			<div id="branding">Made by Mitchs.co</div>
+			
 
 		</article>
 
