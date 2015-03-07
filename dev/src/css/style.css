@@ -73,10 +73,10 @@ nav{
 		padding: 0; margin: 0 auto;
 		color:rgba(255,255,255,0.9);
 		transition:0.3s;
-		padding-top: 3px;
+		padding-top: 1px;
 
 	}
-		nav h1 i{font-size: 52pt; position: relative; top:12px; margin-right: 8px;}
+		nav h1 i{font-size: 52pt; position: relative; top:13px; margin-right: 8px;}
 		nav h1:hover{
 			cursor: pointer;
 			letter-spacing: 2px;
