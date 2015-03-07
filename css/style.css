@@ -617,8 +617,8 @@ article{
 	/*Tips*/
 	#tips{
 		width:100%;
-		height: 60px;
-		line-height: 60px;
+		height: 40px;
+		line-height: 40px;
 		color:#fff;
 		background-color: #f5414c;
 		position: fixed;
@@ -627,6 +627,8 @@ article{
 		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 		text-align: center;
 		letter-spacing: 1px;
+		font-size: 9pt;
+		text-transform: uppercase;
 		font-weight: 300;
 		display: none;
 	}
