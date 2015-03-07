@@ -1,6 +1,6 @@
 @media print {
-	nav, aside, article, #info_bar, #intro_wrapper, #pdf_lightbox{
-		display: none;
+	nav, aside, article, #info_bar, #intro_wrapper, #pdf_lightbox, #tips{
+		display: none !important;
 	}
 	#print_page{
 		display: block;

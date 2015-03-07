@@ -262,17 +262,20 @@ $("#generate").click(function(){
 
 	$("#print_page").show();
 	generatePDF();
+	$("#tips").show();
 	window.print();
 	saveLocal(); 
+	$("#tips").fadeOut();
 	$("#print_page").hide();
 
 	$("#settings").hide();
 	$("#thanks").show();
+
 })
 
 //After generation, return to editing
 $("#backtoedit").click(function(){
-	navCounter =  1;
+	navCounter =  10;
 	$("nav > ul > li").removeClass("activated");
 	$("#thanks").hide();
 	checkNavPos();
