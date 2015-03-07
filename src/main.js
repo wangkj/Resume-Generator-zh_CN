@@ -265,7 +265,7 @@ $("#generate").click(function(){
 	$("#tips").show();
 	window.print();
 	saveLocal(); 
-	$("#tips").fadeOut();
+	$("#tips").hide();
 	$("#print_page").hide();
 
 	$("#settings").hide();
