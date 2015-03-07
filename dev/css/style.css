@@ -1,0 +1,140 @@
+/*
+
+
+
+███████╗████████╗ ██████╗ ██████╗ 
+██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗
+███████╗   ██║   ██║   ██║██████╔╝
+╚════██║   ██║   ██║   ██║██╔═══╝ 
+███████║   ██║   ╚██████╔╝██║     
+╚══════╝   ╚═╝    ╚═════╝ ╚═╝     
+                                  
+Don't waste your time editing this.
+
+It won't change anything.
+
+Edit theme.css instead.
+
+Problems? Email me at Mitch@mitchs.co.
+
+
+*/
+
+body{
+	width:100%; height: 100%;
+	margin: 0 auto; padding: 0;
+	background-color: #F9F9F9;
+	font-family: 'Lato', sans-serif;
+}
+
+
+/*	==============================================
+	==============================================
+				Link Styling
+	==============================================
+	==============================================	*/
+a{
+	color:#f5414c;
+	font-weight: 400;
+	text-decoration: none;
+	transition:0.3s;
+	padding: 2px;
+	border-bottom: 1px dotted #f5414c;
+}
+	a:hover{
+		transition:0.3s;
+		color:#000;
+		border-bottom: 1px dotted #000;
+	}
+
+
+/*	==============================================
+	==============================================
+				Sidebar/Nav
+	==============================================
+	==============================================	*/
+nav{
+	z-index: 50000;
+	width: 100%;
+	height: 100px;
+	box-sizing: border-box;
+	background-color: #2B2F3E;
+	color:#93959E;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+	nav h1{
+		width:400px;
+		float: left;
+		text-align: center;
+		font-weight: 100;
+		font-size: 22pt;
+		text-transform: lowercase;
+		letter-spacing:1px;
+		padding: 0; margin: 0 auto;
+		color:rgba(255,255,255,0.9);
+		transition:0.3s;
+		padding-top: 3px;
+
+	}
+		nav h1 i{font-size: 52pt; position: relative; top:12px; margin-right: 8px;}
+		nav h1:hover{
+			cursor: pointer;
+			letter-spacing: 2px;
+			transition:0.2s;
+		}
+		nav h2{
+			float: right;
+			text-align: right;
+			color:rgba(255,255,255,0.9);
+			font-size: 35pt;
+			position: absolute;
+			top:-15; right:43;
+			opacity: 1;
+			transition:1;
+		}
+			nav h2:hover{
+				opacity: 0.8;
+				cursor: pointer;
+			}
+	nav ul{
+		list-style-type: none;
+		padding: 0; margin: 0 auto;
+		margin-bottom: 50px;
+	}
+		nav ul li{
+			padding: 16px 30px 16px 30px;
+			text-transform: uppercase; letter-spacing: 3px; font-weight: 400; font-size: 9pt;
+			transition:0.15s;
+		}
+				nav .activated{
+					background: #f5414c;
+					background: linear-gradient(to bottom, #f5414c 0%,#ff2c5e 100%);
+					color: #fff;
+				}
+			nav ul li:hover{
+				background-color: rgba(255,255,255,0.09);
+				transition:0.15s;
+				cursor: pointer;
+			}
+			nav ul li i{padding-right: 10px;}
+
+
+			#branding{
+				width: calc(100% - 300px);
+				text-align: center;
+				position: fixed;
+				bottom: 5px; right: 0px;
+				font-size: 9pt; font-weight: 400; letter-spacing: 2px;
+				color:#5d6687;
+				opacity: 0.5;
+				transition:0.3s;
+				box-sizing:border-box; padding:5px;
+			}
+				#branding:hover{
+					cursor: pointer;
+					transition:0.3s;
+					opacity: 0.8;
+				}
+
+
+

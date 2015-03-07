@@ -1,0 +1,59 @@
+@media print {
+	nav, aside, article, #info_bar, #intro_wrapper, #pdf_lightbox{
+		display: none;
+	}
+	#print_page{
+		display: block;
+		box-sizing:border-box;
+
+		/*Disabled  these in print query*/
+		z-index: 100;
+		padding: 0;
+		box-shadow: none;
+		top:0px; left:0;
+		margin-left: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	*{
+		page-break-inside: avoid;
+	}
+
+}
+@page {
+	size: auto;   
+	margin: 10mm; 
+}
+
+
+/*Awesome link underlining*/
+p > a {
+  position: relative;
+  color: #f5414c;
+  text-decoration: none;
+}
+
+p > a:hover {
+  color: #f5414c;
+}
+
+p > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2;
+  left: 0;
+  background-color: #f5414c;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+p > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}

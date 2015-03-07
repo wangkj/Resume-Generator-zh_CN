@@ -6,16 +6,20 @@
 		<meta name="theme-color" content="#f5414c">
 		<meta name="description" content="Ineedaresu.me is a super simple and free resume generator. You fill in a few fields including work history, education, skills, and more, and we will generate you a PDF resume that you can download or print instantly!">
 		<meta name="author" content="Mitch Samuels">
-		<meta name="keywords" content="Mitch Samuels, resume, generator, creator, maker, resumay, job, jobs, career, javascript, pdf, word, print, creating, make, generate, apply, applicant">
+		<meta name="keywords" content="Simple, Quick, resume, CV, contact, job, work, career, fair, builder, minimal, Mitch Samuels, resume, generator, creator, maker, resumay, job, jobs, career, javascript, pdf, word, print, creating, make, generate, apply, applicant">
 
 		<link rel="shortcut icon" type="image/ico" href="src/rainbow.ico" />
 
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="animate.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<link rel="stylesheet" type="text/css" href="css/themes/theme_default.css" id="css_theme_1">
+		<link rel="stylesheet" type="text/css" href="css/themes/theme_default_left.css" id="css_theme_2">
+		<link rel="stylesheet" type="text/css" href="css/print.css">
 
 		<!-- Google Webfont, Lato, 100,300,400,700,900 -->
 		<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css">
 		<link href="http://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Merriweather:400,300,700" rel="stylesheet" type="text/css">
 
 
 		<!-- Ionicons CDN -->
@@ -31,13 +35,9 @@
 
 <!-- <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mitch%40mitchs%2eco&lc=US&item_name=Donation%20to%20Resumaker&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest" target="_blank"></a> -->
 
-				</p>
-			</div>
-		</div>
 
 
-
-		<aside>
+		<nav>
 			<h1><i class="ion-document"></i><br/><b>i</b>need<b>a</b>resu.me</h1>
 			<ul>
 				<li id="tab_intro" class="activated"><i class="ion-ios-information"></i> Introduction</li>
@@ -48,29 +48,46 @@
 				<li id="tab_5"><i class="ion-ios-list"></i> Skills</li>
 				<li id="tab_6"><i class="ion-checkmark-circled"></i> Finish</li>
 			</ul>
-			<div id="branding">made with <i class="ion-heart"></i> by mitchs.co</div>
-		</aside>
+			<button id="preview_btn"><i class="ion-ios-eye"></i> Preview Resume</button>
+		</nav>
 
 
 
 		<article>
 
-
-
 			<progress value="0" max="100" id="progressbar"></progress>	
 
+			<div id="branding">developed by mitchs.co</div>
 
 			<section id="intro_box" class="animated pulse">
 				<h4><i class="ion-document"></i><br/><b>i</b>need<b>a</b>resu.me</h4>
 				<h5>create a R&eacute;sum&eacute; in seconds</h5>
+
 				<ul>
-					<li><h1>Super Simple</h1><h2>Easy-to-follow instructions every step of the way. Navigate with the <i class="ion-arrow-left-c"></i> and <i class="ion-arrow-right-c"></i> keys or by using the enter button, and follow your progress towards completion with a bar at the top of the screen.</h2></li>
-					<li><h1>Chrome Compatible</h1><h2>Compatible with Chrome Browser on Windows, Mac, and Linux. It might work on other browsers, but probably not. Definitely wont work on mobile.</h2></li>
-					<li><h1>Take Your Time</h1><h2>We temporarily store your data locally so you can come back and finish</h2></li>
-					<li><h1>Private and Secure</h1><h2>Nothing you enter is ever sent to us or saved, so nobody sees it except you</h2></li>
-					<li><h1>Always Free</h1><h2>We just don't feel like charging.<br/>View an example of a resume it generates <a href="src/example.pdf">here</a>.</h2></li>
+					<li>
+						<h5>Super duper simple</h5>
+						<h6>Easy-to-follow instructions every step of the way. Navigate with the <i class="ion-arrow-left-c"></i> and <i class="ion-arrow-right-c"></i> keys or by using the enter button, and follow your progress towards completion with a bar at the top of the screen.</h6>
+					</li>
+					<li>
+						<h5>Compatible With Chrome</h5>
+						<h6>Be sure you're using Google Chrome. It might work in Firefox. It probably wont work on mobile, and definitely wont on Internet Explorer.</h6>
+					</li>
+					<li>
+						<h5>Procrastination Station</h5>
+						<h6>Did you find something more fun to do when you were making your resume? Go ahead, we'll automatically save some of your data so you can come back and finish.</h6>
+					</li>
+					<li>
+						<h5>Private and Secure</h5>
+						<h6>Nothing you enter on this site is ever sent to us or saved on any servers, so nobody sees it except you.</h6>
+					</li>
+					<li>
+						<h5>Beautiful and Customizable</h5>
+						<h6>You can see an example of the beautiful default theme <a href="#" target="_blank">here</a>, but if you want to do more, you can also create your own using HTML and CSS. <a href="#" target="_blank">Learn more</a>.</h6>
+					</li>
 				</ul>
-				<button id="intro_reset">Start Over <i class="ion-refresh"></i></button>
+
+				<button id="intro_reset">Start Over? <i class="ion-refresh"></i></button>
+				<div id="confirm_reset">Are you sure? <a href="#" id="clear_data_yes">Yes</a> / <a href="#" id="clear_data_no">No</a></div>
 				<button id="intro_begin">Begin <i class="ion-arrow-right-c"></i></button>
 			</section>
 
@@ -80,16 +97,16 @@
 					<h2 id="instructions"></h2>
 
 					<!--Personal information-->
-                    <input type="text" class="hideall" id="personal_name_input" placeholder="John Smith">
-					<input type="text" class="hideall" id="personal_email_input" placeholder="john@johnsmith.com" style="text-transform:none;">
+                    <input type="text" class="hideall" id="personal_name_input" placeholder="Bill Cosby">
+					<input type="text" class="hideall" id="personal_email_input" placeholder="horselover14@aol.com">
 					<input type="text" class="hideall" id="personal_phone_input" placeholder="760-555-4824">
 					<input type="text" class="hideall" id="personal_location_input" placeholder="Madison, WI">
-					<input type="text" class="hideall" id="personal_link_input" placeholder="http://linkedin.com/in/mitchsamuels" style="text-transform:none;">
+					<input type="text" class="hideall" id="personal_link_input" placeholder="http://linkedin.com/in/mitchsamuels">
 
 					<!--Statement-->
 					<span id="statement" class="hideall">
-						<br/>
-						<textarea id="personal_statement_input" maxlength="800" placeholder="I would love to work here because I heard you have the gnarliest lunch buffet..."></textarea>
+						<label>Statement title & Statement:</label><input type="text" id="statement_title" placeholder="Why I want to work here:">
+						<textarea id="personal_statement_input" maxlength="1200" placeholder="I would love to work here because I heard you have the gnarliest lunch buffet..."></textarea>
 						<div id="statement_feedback">For your own good, you only have <span id="statement_remaining"></span> characters left.</div>
 					</span>
 
@@ -103,7 +120,7 @@
 						<hr/>
 						<label>Job Title:</label><input type="text" id="title" placeholder="Front End Engineer">
 						<label>Job Description:</label><textarea id="job_desc" placeholder="Responsible for the development of Google.com, nothing serious."></textarea>
-						<div id="desc_formatting">Hint: an asterisk ( * ) will turn into a bullet point!<br/><small>HTML Markup is also supported</small></div>
+						<div id="desc_formatting">Hint: an asterisk ( * ) will turn into a bullet point!<br/><small>HTML Markup is also supported (don't use line breaks)</small></div>
 						<button id="new_job"><i class="ion-plus"></i> Add job</button>
 					</span>
 
@@ -123,85 +140,147 @@
 						<label>Skills (Seperate with commas):</label><input type="text" id="skillsinput" placeholder="HTML, CSS, Javascript, Adobe Suite">
 					</span>
 
+					<!-- Continue Buton -->
                     <button id="next_button">Continue <i class="ion-arrow-right-c"></i></button>
 			</section>
 
 
-
+			<!-- Settings -->
 			<section id="settings" class="animated pulse">
-				<h2 style="padding-bottom:15px;">Choose your settings:<br/><br/>Only one setting for now: tell me, do you want a more serious <span id="seriffont">serif font</span> or a sleeker <b>Sans-serif font</b>?</h2>
-				<label id="seriflabel"><input type="checkbox" id="serifyes" /> <i class="ion-ios-arrow-thin-left"></i> Check for serif font</label>
+				<h2>Adjust your settings:</h2>
+				<ul>
+					<li>
+						<h5>Serif font</h5>
+						<h6>Default is Sans-serif</h6>
+						<div class="check_wrap"><input type="checkbox" id="serifyes" /></div>
+					</li>
+					<li>
+						<h5>Align Resume Left</h5>
+						<h6>Default is centered</h6>
+						<div class="check_wrap"><input type="checkbox" id="theme2" /></div>
+					</li>
+				</ul>
 				<button id="generate">Done, make my resume!</button>
 			</section>
 
 
-
+			<!-- Thanks -->
 			<section id="thanks" class="animated pulse">
 				<h2 style="padding-bottom:15px;">Thank you!</h2>
 				<p>If this app helped you out, please say thanks by spreading the word on Twitter or Facebook!<br/><br/>If you have feedback or suggestions, please contact me through my <a href="http://mitchs.co" target="_blank">website</a>.<br/><br/>Follow development of this on my <a href="https://github.com/mitchas" target="_blank">GitHub</a></p>
 				<button id="backtoedit">Return to editing <i class="ion-compose"></i></button>
 			</section>
 
-
-			
-
 		</article>
 
 
-		<div id="print_page">
+		<!-- PDF Lightbox -->
+		<div id="pdf_lightbox">
+			<div id="hide_preview"><i class="ion-ios-close-empty"></i> Click outside to Close Preview <i class="ion-ios-close-empty"></i></div>
+		</div>
 
-			<div id="pdf_name">John E. Smith</div>
-			<div id="pdf_contact"><i class="ion-ios-email-outline"></i> <span id="pdf_email">mitch@mitchs.co</span> &nbsp; &#8226; &nbsp; <i class="ion-ios-telephone-outline"></i> <span id="pdf_phone">507-330-5897</span> &nbsp; &#8226; &nbsp; <i class="ion-ios-location-outline"></i> <span id="pdf_location">Madison, WI</span><br/><b><span id="pdf_link">http://linkedin.com/in/mitchas</span></b></div>
 
-			<hr/>
+		<!-- Actual PDF -->
+		<div id="print_page" class="sans_resume">
 
-			<div id="pdf_statement">
-			</div>
+			<div id="pdf_name" class="fill"></div>
 
-			<hr id="statement_hr" />
+			<!-- Contact Info -->
+			<div id="pdf_contact" class="fill">
+				<i class="ion-ios-email-outline" id="email_icon"></i> <span id="pdf_email" class="fill"></span> 
+				<i class="ion-ios-telephone-outline" id="phone_icon"></i> <span id="pdf_phone" class="fill"></span> 
+				<i class="ion-ios-location-outline" id="loc_icon"></i> <span id="pdf_location" class="fill"></span>
 
-			<h2>Professional Experience</h2>
-
-			<div id="pdf_job1">
-				<span id="job_1_employer"></span> &nbsp; &#8226; &nbsp; <span id="job_1_loc"></span> &nbsp; &#8226; &nbsp; <span id="job_1_time"></span>
-				<p id="pdf_job1_emp_desc"></p>
-				<span id="job1_title"></span>
-				<p id="pdf_job1_job_desc"></p>
-			</div>
-			<div id="pdf_job2">
-				<span id="job_2_employer"></span> &nbsp; &#8226; &nbsp; <span id="job_2_loc"></span> &nbsp; &#8226; &nbsp; <span id="job_2_time"></span>
-				<p id="pdf_job2_emp_desc"></p>
-				<span id="job2_title"></span>
-				<p id="pdf_job2_job_desc"></p>
-			</div>
-			<div id="pdf_job3">
-				<span id="job_3_employer"></span> &nbsp; &#8226; &nbsp; <span id="job_3_loc"></span> &nbsp; &#8226; &nbsp; <span id="job_3_time"></span>
-				<p id="pdf_job3_emp_desc"></p>
-				<span id="job3_title"></span>
-				<p id="pdf_job3_job_desc"></p>
+				<span id="pdf_link" class="fill"></span>
 			</div>
 
 			<hr/>
 
-			<h2>Education</h2>
+			<!-- Statement -->
+			<div id="pdf_statement_section" class="fill">
+				<h2 id="pdf_statement_title" class="fill"></h2>
+				<p id="pdf_statement" class="fill"></p>
+				<hr/>
+			</div>
 
-			<h3 id="pdf_edu_1"><span id="pdf_degree"></span><br/><span id="pdf_school"></span> &nbsp; &#8226; &nbsp; <span id="pdf_school_loc"></span> &nbsp; &#8226; &nbsp; <span id="pdf_graduation"></span></h3>
-			<h3 id="pdf_edu_2"><span id="pdf_degree2"></span><br/><span id="pdf_school2"></span> &nbsp; &#8226; &nbsp; <span id="pdf_school_loc2"></span> &nbsp; &#8226; &nbsp; <span id="pdf_graduation2"></span></h3>
-			<h3 id="pdf_edu_3"><span id="pdf_degree3"></span><br/><span id="pdf_school3"></span> &nbsp; &#8226; &nbsp; <span id="pdf_school_loc3"></span> &nbsp; &#8226; &nbsp; <span id="pdf_graduation3"></span></h3>
+			<!-- Experience Section -->
+			<div id="pdf_experience_section" class="fill">
+				<h2>Experience</h2>
+				<!-- Job One -->
+				<div id="pdf_job1" class="pdf_job_section fill">
+					<span id="job_1_employer" class="fill"></span>
+					<span id="job_1_loc" class="fill"></span>
+					<span id="job_1_time" class="fill"></span>
 
-			<hr/>
+					<p id="pdf_job1_emp_desc" class="fill"></p>
+					<div id="job1_title" class="fill"></div>
+					<p id="pdf_job1_job_desc" class="fill"></p>
+				</div>
+				<!-- Job Two -->
+				<div id="pdf_job2" class="pdf_job_section fill">
+					<span id="job_2_employer" class="fill"></span>
+					<span id="job_2_loc" class="fill"></span>
+					<span id="job_2_time" class="fill"></span>
 
-			<h2>Skills</h2>
+					<p id="pdf_job2_emp_desc" class="fill"></p>
+					<div id="job2_title" class="fill"></div>
+					<p id="pdf_job2_job_desc" class="fill"></p>
+				</div>
+				<!-- Job Three -->
+				<div id="pdf_job3" class="pdf_job_section fill">
+					<span id="job_3_employer" class="fill"></span>
+					<span id="job_3_loc" class="fill"></span>
+					<span id="job_3_time" class="fill"></span>
 
-			<h4><span id="pdf_skills">Adobe Suite &nbsp; &#8226; &nbsp; Microsoft Word &nbsp; &#8226; &nbsp; Microsoft Excel &nbsp; &#8226; &nbsp; Sublime &nbsp; &#8226; &nbsp; Sketch &nbsp; &#8226; &nbsp; Git &nbsp; &#8226; &nbsp; HTML &nbsp; &#8226; &nbsp; Javascript &nbsp; &#8226; &nbsp; CSS &nbsp; &#8226; &nbsp; PHP</h4>
+					<p id="pdf_job3_emp_desc" class="fill"></p>
+					<div id="job3_title" class="fill"></div>
+					<p id="pdf_job3_job_desc" class="fill"></p>
+				</div>
+				<hr/>
+			</div>
 
+			<!-- Education Section -->
+			<div id="pdf_education_section" class="fill">
+				<h2>Education</h2>
+
+				<!-- School One -->
+				<div id="pdf_edu_1" class="pdf_education_section fill">
+					<span id="pdf_degree" class="fill"></span>
+					<span id="pdf_school" class="fill"></span> 
+					<span id="pdf_school_loc" class="fill"></span> 
+					<span id="pdf_graduation" class="fill"></span>
+				</div>
+				<!-- School Two -->
+				<div id="pdf_edu_2" class="pdf_education_section fill">
+					<span id="pdf_degree2" class="fill"></span>
+					<span id="pdf_school2" class="fill"></span> 
+					<span id="pdf_school_loc2" class="fill"></span> 
+					<span id="pdf_graduation2" class="fill"></span>
+				</div>
+				<!-- School Three -->
+				<div id="pdf_edu_3" class="pdf_education_section fill">
+					<span id="pdf_degree3" class="fill"></span>
+					<span id="pdf_school3" class="fill"></span> 
+					<span id="pdf_school_loc3" class="fill"></span> 
+					<span id="pdf_graduation3" class="fill"></span>
+				</div>
+				<hr/>
+			</div>
+
+			<!-- Skills section -->
+			<div id="pdf_skills_section" class="fill">
+				<h2>Skills</h2>
+				<span id="pdf_skills" class="fill"></span>
+			</div>
 
 
 
 		</div>
 
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-		<script src="main.js"></script>
+		<script src="src/jquery-1.8.3.min.js"></script>
+		<script src="src/main.js"></script>
+		<script src="src/tests.js"></script>
         <script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
