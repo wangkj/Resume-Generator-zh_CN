@@ -82,6 +82,7 @@
 		padding-bottom: 10px;
 	}
 		/*Adding spacing between items*/
+		#email_icon,
 		#phone_icon,
 		#loc_icon{
 			padding-left: 25px;
