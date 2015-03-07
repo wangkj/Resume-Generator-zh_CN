@@ -94,7 +94,6 @@ nav{
 	}
 		nav h1 i{font-size: 52pt;}
 		nav h1:hover{
-			letter-spacing: 2px;
 			transition:0.2s;
 		}
 	nav ul{
