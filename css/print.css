@@ -1,5 +1,5 @@
 @media print {
-	nav, aside, article, #info_bar, #intro_wrapper, #pdf_lightbox, #tips{
+	nav, aside, article, #info_bar, #intro_wrapper, #pdf_lightbox, #tips, #preview_btn, #save_from_preview{
 		display: none !important;
 	}
 	#print_page{
@@ -15,8 +15,39 @@
 		margin-top: 0;
 		margin-bottom: 0;
 	}
-	*{
+	#pdf_experience_section h2,
+	#job_1_employer,
+	#job_1_loc,
+	#job_1_time,
+	#job1_title,
+	#job_2_employer,
+	#job_2_loc,
+	#job_2_time,
+	#job2_title,
+	#job_3_employer,
+	#job_3_loc,
+	#job_3_time,
+	#job3_title,
+	#pdf_education_section h2,
+	#pdf_edu_1,
+	#pdf_edu_2,
+	#pdf_edu_3,
+	#pdf_skills_section
+	{
 		page-break-inside: avoid;
+	}
+	#pdf_statement,
+	#pdf_job1_emp_desc,
+	#pdf_job1_job_desc,
+	#pdf_job2_emp_desc,
+	#pdf_job2_job_desc,
+	#pdf_job3_emp_desc,
+	#pdf_job4_job_desc{
+		page-break-inside:always;
+	}
+	hr{
+		page-break-after: avoid;
+		page-break-before: always;
 	}
 
 }

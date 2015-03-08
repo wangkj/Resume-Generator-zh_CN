@@ -5,6 +5,15 @@ body{
 	font-family: 'Lato', sans-serif;
 }
 
+/*Prevent Text Selection*/
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 /*	==============================================
 	==============================================
@@ -154,8 +163,9 @@ article{
 
 
 	#preview_btn{
-		width:100%; height:40px;
-		position: absolute; bottom: 0;
+		width:300px; height:40px;
+		position: fixed; bottom: 0;
+		z-index: 499999;
 		border: none;
 		background-color: #1f222d;
 		color:#93959E;
@@ -171,19 +181,45 @@ article{
 			transition:0.2s;
 		}
 	#hide_preview{
-		width:100%;
+		height: 53px; width: 53px;
+		line-height: 21px;
+		float: right;
 		text-align: center;
 		box-sizing:border-box;
-		padding-left: 2.5%; padding-right: 2.5%; padding-top: 28px;
-		font-size: 10pt;
+		font-size: 40pt;
 		border: none;
-		color:rgba(255,255,255,0.9);
-		text-transform: uppercase;
-		font-weight: 300;
-		font-family: 'Lato', sans-serif;
-		letter-spacing: 4px;
+		background-color: #fff;
+		color: #3E424F;
+		transition:0.3s;
+		position: absolute; top:0; right: 0;
+	}
+		#hide_preview:hover{
+			cursor: pointer;
+			background-color: transparent;
+			color: #fff;
+		}
+	#save_from_preview{
+		height: 53px; width: 53px;
+		display: none;
+		line-height: 51px;
+		position: fixed; right: 0;
+		z-index: 5000000;
+		margin-top: 54px;
+		text-align: center;
+		box-sizing:border-box;
+		font-size: 26pt;
+		padding-top: 10px;
+		border-top: 1px solid #3E3242;
+		border: none;
+		background-color: #fff;
+		color: #3E424F;
 		transition:0.3s;
 	}
+		#save_from_preview:hover{
+			cursor: pointer;
+			background-color: transparent;
+			color: #fff;
+		}
 
 	progress{
 		-webkit-appearance: none;
@@ -239,6 +275,17 @@ article{
 				transition:0.2s;
 				cursor: pointer;
 			}
+
+			/*article section h3{
+				letter-spacing: 1px;
+				font-weight: 700;
+				color:#626c8d;
+				opacity: 0.6;
+				font-size: 8pt;
+				text-align: center;
+				padding-bottom: 5px;
+				width: 100%;
+			}*/
 
 	label{
 		text-transform: uppercase;
@@ -326,41 +373,6 @@ article{
 			}
 
 
-
-	/*#intro_box ul{
-		font-size: 9pt; letter-spacing: 1px; font-weight: 400;
-		list-style-type: none;
-		padding: 0; margin: 0 auto;
-		padding-top: 25px;
-		color:#626c8d;
-	}
-		#intro_box ul li{
-			text-align: left;
-			padding: 15px;
-			border-top: 1px dotted rgba(20,40,60,0.12);
-		}
-			#intro_box ul li:last-child{
-				border-bottom: 1px dotted rgba(20,40,60,0.12);
-			}
-			#intro_box ul li:nth-child(even){
-				font-weight: 700;
-				background-color: rgba(43,47,62,0.005);
-			}
-
-			#intro_box ul li h1{
-				font-size: 16pt;
-				font-weight: 400;
-				letter-spacing: 2px;
-				color:#383e51;
-				padding: 0; margin: 0 auto;
-			}
-				#intro_box ul li h2{
-					font-size: 10pt;
-					padding: 0; margin: 0 auto;
-					padding-top: 2px;
-					text-align: left;
-					text-transform: none;
-				}*/
 
 	#intro_box p{
 		font-size: 9pt;
@@ -540,7 +552,8 @@ article{
 			transition:0.2s;
 			border-left: 0px solid transparent;
 		}
-			#settings ul li:hover{
+			#settings ul li:nth-child(1):hover,
+			#settings ul li:nth-child(2):hover{
 				cursor: pointer;
 				transition:0.2s;
 				border-left: 5px solid #f5414c;
@@ -556,7 +569,7 @@ article{
 		}
 		#settings ul li h5,
 		#settings ul li h6{
-			width:80%;
+			width:60%;
 			float: left;text-align: left;
 			margin: 0 auto; padding: 0;
 			text-transform: uppercase;
@@ -570,6 +583,12 @@ article{
 				font-weight: 400;
 				font-size: 9pt;
 			}
+			#settings ul li small{
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-size: 8pt;
+				position: relative; top:-2px;
+			}
 		input[type='checkbox']{
 			display: inline;
 			border: none;
@@ -581,6 +600,21 @@ article{
 		    position: relative;
 		    top: 7px;
 		    overflow: hidden;
+		}
+		/*Plus minus for line height*/
+		#settings ul li i{
+			font-size: 16pt;
+			position: relative; top:7px;
+			transition:0.2s;
+		}
+			#settings ul li i:hover{
+				cursor: pointer;
+				color: #f5414c;
+				transition:0.2s;
+			}
+		#line_height_counter{
+			padding-right: 3px; padding-left: 3px;
+			position: relative; top:5px;	
 		}
 		/*Buttons on last two dialogs*/
 		#generate,
@@ -640,7 +674,42 @@ article{
 	width:100%; height: 100%;
 	position: fixed; top: 0; left: 0;
 	background-color: rgba(43,47,62,0.9);
-	z-index: 100000000000;
+	z-index: 1000000;
 
 	display: none;
 }
+	#pdf_lightbox small{
+		color:#fff;
+		width:100%;
+		font-size: 8pt;
+		line-height: 2em;
+		text-align: center;
+		text-transform: uppercase;
+		position: relative; left: 25px; top:15px;
+		letter-spacing: 2px;
+	}
+
+
+/*Fine tune the PDF*/
+#adjustments{
+	z-index: 10000000;
+	width: calc(100% - 8.23in);
+	height:100%;
+	position: fixed;
+	bottom: 0px; right: 0;
+	background: #f5414c;
+	background: linear-gradient(to bottom, #f5414c 0%,#ff2c5e 100%);
+	box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 -3px 6px rgba(0,0,0,0.23);
+
+	box-sizing:border-box;
+	padding: 25px;
+}
+	#adjustments ul{
+		list-style-type: none;
+		padding: 0; margin: 0 auto;
+	}
+
+
+
+
+

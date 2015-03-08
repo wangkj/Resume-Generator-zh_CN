@@ -37,6 +37,8 @@
 			Click <b>"+More Settings"</b> then uncheck "Headers & Footers" &nbsp; | &nbsp; Change the <b>Destination</b> to save it as a PDF
 		</div>
 
+		<button id="preview_btn"><i class="ion-ios-eye"></i> Preview Resume</button>
+
 
 		<nav>
 			<h1><i class="ion-document"></i><br/><b>i</b>need<b>a</b>resu.me</h1>
@@ -49,7 +51,6 @@
 				<li id="tab_5"><i class="ion-ios-list"></i> Skills</li>
 				<li id="tab_6"><i class="ion-checkmark-circled"></i> Finish</li>
 			</ul>
-			<button id="preview_btn"><i class="ion-ios-eye"></i> Preview Resume</button>
 		</nav>
 
 
@@ -58,7 +59,7 @@
 
 			<progress value="0" max="100" id="progressbar"></progress>	
 
-			<div id="branding">developed by mitchs.co</div>
+			<div id="branding" onclick="_gaq.push(['_trackEvent', 'link', 'click', 'Go to Mitchs.co']);">developed by mitchs.co</div>
 
 			<section id="intro_box" class="animated pulse">
 				<h4><i class="ion-document"></i><br/><b>i</b>need<b>a</b>resu.me</h4>
@@ -75,7 +76,7 @@
 					</li>
 					<li>
 						<h5>Procrastination Station</h5>
-						<h6>Did you find something more fun to do when you were making your resume? Go ahead, we'll automatically save some of your data so you can come back and finish.</h6>
+						<h6>Did you find something more fun to do when you were making your resume? Go ahead, we'll automatically save the text that you leave in the fields so you can come back later.</h6>
 					</li>
 					<li>
 						<h5>We aren't thieves</h5>
@@ -113,12 +114,11 @@
 
 					<!--Work Experience-->
 					<span id="work" class="hideall">
-						<br/>
 						<label>Employer:</label><input type="text" id="employer" placeholder="Google, Inc.">
 						<label>Location:</label><input type="text" id="job_location" placeholder="Mountain View, CA">
 						<label>Time:</label><input type="text" id="job_time" placeholder="July 2014 - Present">
 						<label>Short(ish) Employer Description:</label><input type="text" id="employer_desc" placeholder="Google is the leading search engine...">
-						<hr/>
+						<hr style="opacity:0 !important;" />
 						<label>Job Title:</label><input type="text" id="title" placeholder="Front End Engineer">
 						<label>Job Description:</label><textarea id="job_desc" placeholder="Responsible for the development of Google.com, nothing serious."></textarea>
 						<div id="desc_formatting">Hint: an asterisk ( * ) will turn into a bullet point!<br/><small>HTML Markup is also supported (don't use line breaks)</small></div>
@@ -147,7 +147,7 @@
 
 
 			<!-- Settings -->
-			<section id="settings" class="animated pulse">
+			<section id="settings" class="animated pulse noselect">
 				<h2>Adjust your settings:</h2>
 				<ul>
 					<li>
@@ -160,30 +160,58 @@
 						<h6>Default is centered</h6>
 						<div class="check_wrap"><input type="checkbox" id="theme2" /></div>
 					</li>
+					<li>
+						<h5>Hide Lines Between Sections</h5>
+						<h6>Shown by Default</h6>
+						<div class="check_wrap"><input type="checkbox" id="removehr" /></div>
+					</li>
+					<li><small>Adjust these to perfect the layout:</small></li>
+					<li>
+						<h5>Paragraph Line Height</h5>
+						<h6>Spacing between lines in paragraphs</h6>
+						<div class="check_wrap">
+							<i class="ion-android-remove-circle" id="decrease_line_height"></i>
+							<span id="line_height_counter">0</span>
+							<i class="ion-android-add-circle" id="increase_line_height"></i>
+						</div>
+					</li>
 				</ul>
-				<button id="generate">Done, make my resume!</button>
+				<button id="generate" onclick="_gaq.push(['_trackEvent', 'link', 'click', 'Generate Resume']);">Done, create my resume!</button>
 
-			</section>
-
-
-			<!-- Thanks -->
-			<section id="thanks" class="animated pulse">
-				<h2 style="padding-bottom:15px;">Thank you!</h2>
-				<p>If this app helped you out, please say thanks by spreading the word on Twitter or Facebook!<br/><br/>If you have feedback or suggestions, please contact me through my <a href="http://mitchs.co" target="_blank">website</a>.<br/><br/>Follow development of this or make your own theme by visiting my <a href="https://github.com/mitchas" target="_blank">GitHub</a></p>
-				<button id="backtoedit">Return to editing <i class="ion-compose"></i></button>
 			</section>
 
 		</article>
 
 
+		<!-- PDF Fine Tuning -->
+		<!-- <div id="adjustments">
+			<ul>
+				<li>
+
+				</li>
+				<li>
+
+				</li>
+				<li>
+
+				</li>
+			</ul>
+		</div> -->
+
+
 		<!-- PDF Lightbox -->
 		<div id="pdf_lightbox">
-			<div id="hide_preview"><i class="ion-ios-close-empty"></i> Click outside to Close Preview <i class="ion-ios-close-empty"></i></div>
+			<small>This is not exactly what the PDF will look like.<br/>If something looks off after you click create, adjust the settings then try again.</small>
+			<div id="hide_preview"><i class="ion-ios-close-empty"></i></div>
 		</div>
+		<div id="save_from_preview"><i class="ion-ios-cloud-download-outline"></i></div>
+
 
 
 		<!-- Actual PDF -->
 		<div id="print_page" class="sans_resume">
+
+			<div id="measure"></div>
 
 			<div id="pdf_name" class="fill"></div>
 
@@ -196,7 +224,7 @@
 				<span id="pdf_link" class="fill"></span>
 			</div>
 
-			<hr/>
+			<hr />
 
 			<!-- Statement -->
 			<div id="pdf_statement_section" class="fill">
@@ -238,7 +266,7 @@
 					<div id="job3_title" class="fill"></div>
 					<p id="pdf_job3_job_desc" class="fill"></p>
 				</div>
-				<hr/>
+				<hr />
 			</div>
 
 			<!-- Education Section -->
@@ -266,7 +294,7 @@
 					<span id="pdf_school_loc3" class="fill"></span> 
 					<span id="pdf_graduation3" class="fill"></span>
 				</div>
-				<hr/>
+				<hr />
 			</div>
 
 			<!-- Skills section -->
@@ -288,6 +316,10 @@
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-60397420-1']);
+		  _gaq.push(['_trackPageview']);
 
 		  ga('create', 'UA-60397420-1', 'auto');
 		  ga('send', 'pageview');

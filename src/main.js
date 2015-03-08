@@ -1,7 +1,12 @@
 $( document ).ready(function() {
 
+
+
 	//Test for local storage
 	loadLocal();
+
+	//Display preview on start - testing
+	// $("#preview_btn").click();
 
 	//Statement Character Count
 	var text_max = 1200;
@@ -234,7 +239,23 @@ $("#settings > ul > li").click(function(){
 $('input[type=checkbox]').click(function(){
 	event.stopPropagation();
 })
+//Line height and element spacing
+lineHeight = 1.6;
+defaultLineHeight = 0;
+$("#increase_line_height").click(function(){
+	lineHeight = lineHeight+0.1;
+	defaultLineHeight++;
+	$("#line_height_counter").text(defaultLineHeight);
+	$(".fill p").css("lineHeight", lineHeight+"em");
+})
+$("#decrease_line_height").click(function(){
+	lineHeight = lineHeight-0.1;
+	defaultLineHeight--;
+	$("#line_height_counter").text(defaultLineHeight);
+	$(".fill p").css("lineHeight", lineHeight+"em");
+})
 function updateSettings(){
+
 	if ($('#serifyes').is(':checked')) {
 		$("#print_page").removeClass("sans_resume");
 		$("#print_page").addClass("serif_resume");
@@ -250,6 +271,14 @@ function updateSettings(){
 		$("#css_theme_2").attr("disabled", "disabled");
 		$("#css_theme_1").removeAttr("disabled");
 	}
+
+	//Remove HRs
+	if($("#removehr").is(':checked')){
+		$("hr").css("opacity", "0");
+	}else{
+		$("hr").css("opacity", "1");
+	}
+
 }
 
 
@@ -268,8 +297,13 @@ $("#generate").click(function(){
 	$("#tips").hide();
 	$("#print_page").hide();
 
-	$("#settings").hide();
-	$("#thanks").show();
+})
+// Final button, generate PDF
+$("#save_from_preview").click(function(){	
+	generatePDF();
+	$("#tips").show();
+	window.print();
+	$("#tips").hide();
 
 })
 
@@ -288,14 +322,19 @@ $("#preview_btn").click(function(){
 	updateSettings();
 	generatePDF();
 	checkEmpty();
-	$("#print_page").animate({ zIndex: 1000000000000 });
+	$("#print_page").animate({ zIndex: 1000000 });
 	$("#pdf_lightbox").fadeIn(100);
+	$("#save_from_preview").fadeIn(100);
 	$("#print_page").fadeIn(100);
+	// $("#adjustments").fadeIn(100);
 })
 // Hide Preview
 $("#hide_preview, #pdf_lightbox").click(function(){
 	$("#print_page").fadeOut(0);
-	$("#pdf_lightbox").delay(100).fadeOut(100);
+
+	// $("#adjustments").fadeOut(0);
+	$("#pdf_lightbox, #save_from_preview").delay(100).fadeOut(100);
+
 	$("#print_page").animate({ zIndex: 0 });
 })
 
