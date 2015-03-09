@@ -13,3 +13,7 @@ Create a theme for ineedaresu.me.
   3.5) Edit js/tests.js to change the content of the resume.
     
 4) If you think your theme is pretty good, email it to me at mitch@mitchs.co and I'll put it on ineedaresu.me if I like it!
+
+.
+
+###If I like your theme and put it up on ineedaresu.me, I'll be sure to credit you! 
