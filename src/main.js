@@ -139,51 +139,51 @@ function checkNavPos(){
 	}else if(navCounter==1){
 		$("#intro_box").hide();
 		$("#body_wrap").show();
-		$("#instructions").html("Starting off easy, what's your <b>full name</b>?");
+		$("#instructions").html("你的全名?");
 		$("#personal_name_input").show().focus();
 		$("#tab_1").addClass("activated");
 		$("#progressbar").val(3);
 	}else if(navCounter==2){
-		$("#instructions").html("This one is tougher, What is your <b>email address</b>?");
+		$("#instructions").html("邮件地址?");
 		$("#personal_email_input").show().focus();
 		$("#tab_1").addClass("activated");
 		$("#progressbar").val(6);
 	}else if(navCounter==3){
-		$("#instructions").html("I know we just met, but can I have your <b>number</b>?");
+		$("#instructions").html("你好可爱, 能告诉我你的电话号码吗?");
 		$("#personal_phone_input").show().focus();
 		$("#tab_1").addClass("activated");
 		$("#progressbar").val(9);
 	}else if(navCounter==4){
-		$("#instructions").html("Not to be creepy but I need your <b>location</b> too.");
+		$("#instructions").html("别害怕，再说说你的联系地址");
 		$("#personal_location_input").show().focus();
 		$("#tab_1").addClass("activated");
 		$("#progressbar").val(12);
 	}else if(navCounter==5){
-		$("#instructions").html("Do you have a <b>portfolio or linkedin</b> or something?");
+		$("#instructions").html("你有个人详细介绍页面吗?");
 		$("#personal_link_input").show().focus();
 		$("#tab_1").addClass("activated");
 		$("#progressbar").val(15);
 	}else if(navCounter==6){
-		$("#instructions").html("Would you like to provide a <b>Personal statement</b>?<br/>I wouldn't judge if you don't.");
+		$("#instructions").html("你有 <b>自我陈述</b> 吗?<br/>");
 		$("#statement").show();
 		// $("#statement_title").show();
 		$("#statement_title").focus();
 		$("#tab_2").addClass("activated");
 		$("#progressbar").val(18);
 	}else if(navCounter==7){
-		$("#instructions").html("If you've had a <b>job</b> you should probably add it here.");
+		$("#instructions").html("工作经历");
 		$("#work").show();
 		$("#employer").focus();
 		$("#tab_3").addClass("activated");
 		$("#progressbar").val(42);
 	}else if(navCounter==8){
-		$("#instructions").html("''Is our children learning?'' - G.W. Bush");
+		$("#instructions").html("教育经历");
 		$("#schooling").show();
 		$("#degree").focus();
 		$("#tab_4").addClass("activated");
 		$("#progressbar").val(67);
 	}else if(navCounter==9){
-		$("#instructions").html("Can you actually do anything?");
+		$("#instructions").html("项目/作品?");
 		$("#skills").show();
 		$("#skillsinput").focus();
 		$("#tab_5").addClass("activated");
@@ -203,9 +203,9 @@ $("#new_job").click(function(){
 	$("#employer, #job_location, #job_time, #employer_desc, #title, #job_desc").val("");
 	$("#employer").focus();
 	if(jobnum==1){
-		$("#instructions").text("You know the drill. Second job This time.");
+		$("#instructions").text("工作经历 #2");
 	}else if(jobnum==2){
-		$("#instructions").text("I'm limiting you to 3. Nobody cares about the rest.");
+		$("#instructions").text("工作经历 #3, 最多填写 3 项工作经历，剩下的那些就不重要了");
 		$("#new_job").prop("disabled",true);
 	}
 	 $("article").animate({ scrollTop: 0 }, "slow");
@@ -220,9 +220,9 @@ $("#new_school").click(function(){
 	$("#degree, #school, #school_location, #graduation").val("");
 	$("#degree").focus();
 	if(schoolnum==1){
-		$("#instructions").text("You better not be putting your high school.");
+		$("#instructions").text("最好不要填写你的高中哦");
 	}else if(schoolnum==2){
-		$("#instructions").text("Seriously? Three schools? Okay, einstein.");
+		$("#instructions").text("真的？三个大学？你真牛逼！");
 		$("#new_school").prop("disabled",true);
 	}
 	 $("article").animate({ scrollTop: 0 }, "slow");

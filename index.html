@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>iNeedAResume | Create a resume</title>
-
 		<meta charset="utf-8">
+		<title>iNeedAResume | 创建一份简历</title>
+
+		
 		<meta name="theme-color" content="#f5414c">
 		<meta name="description" content="Ineedaresu.me is a super simple and free resume generator. You fill in a few fields including work history, education, skills, and more, and we will generate you a PDF resume that you can download or print instantly!">
 		<meta name="author" content="Mitch Samuels">
@@ -18,9 +20,9 @@
 		<link rel="stylesheet" type="text/css" href="css/print.css">
 
 		<!-- Google Webfont, Lato, 100,300,400,700,900 -->
-		<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css">
-		<link href="http://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet" type="text/css">
-		<link href="http://fonts.googleapis.com/css?family=Merriweather:400,300,700" rel="stylesheet" type="text/css">
+		<link href="http://fonts.useso.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css">
+		<link href="http://fonts.useso.com/css?family=Lora:400,700" rel="stylesheet" type="text/css">
+		<link href="http://fonts.useso.com/css?family=Merriweather:400,300,700" rel="stylesheet" type="text/css">
 
 
 		<!-- Ionicons CDN -->
@@ -35,22 +37,22 @@
 <!-- <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mitch%40mitchs%2eco&lc=US&item_name=Donation%20to%20Resumaker&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest" target="_blank"></a> -->
 
 		<div id="tips">
-			Click <b>"+More Settings"</b> then uncheck "Headers & Footers" &nbsp; | &nbsp; Change the <b>Destination</b> to save it as a PDF
+			点击 <b>"+更多设置"</b> 然后取消 "页头和页脚" &nbsp; | &nbsp; 另存为 PDF
 		</div>
 
-		<button id="preview_btn"><i class="ion-ios-eye"></i> Preview Resume</button>
+		<button id="preview_btn"><i class="ion-ios-eye"></i> 预览简历</button>
 
 
 		<nav>
 			<h1><i class="ion-document"></i><br/><b>i</b>need<b>a</b>resu.me</h1>
 			<ul>
-				<li id="tab_intro" class="activated"><i class="ion-ios-information"></i> Introduction</li>
-				<li id="tab_1"><i class="ion-ios-body"></i> Personal Information</li>
-				<li id="tab_2"><i class="ion-ios-chatbubble"></i> Statement</li>
-				<li id="tab_3"><i class="ion-ios-briefcase"></i> Work Experience</li>
-				<li id="tab_4"><i class="ion-ios-book"></i> Education</li>
-				<li id="tab_5"><i class="ion-ios-list"></i> Skills</li>
-				<li id="tab_6"><i class="ion-checkmark-circled"></i> Settings / Finish Up</li>
+				<li id="tab_intro" class="activated"><i class="ion-ios-information"></i> 介绍</li>
+				<li id="tab_1"><i class="ion-ios-body"></i> 个人信息</li>
+				<li id="tab_2"><i class="ion-ios-chatbubble"></i> 声明</li>
+				<li id="tab_3"><i class="ion-ios-briefcase"></i> 工作经验</li>
+				<li id="tab_4"><i class="ion-ios-book"></i> 教育经历</li>
+				<li id="tab_5"><i class="ion-ios-list"></i> 擅长技能</li>
+				<li id="tab_6"><i class="ion-checkmark-circled"></i> 设置 / 完成</li>
 			</ul>
 		</nav>
 
@@ -64,34 +66,34 @@
 
 			<section id="intro_box" class="animated pulse">
 				<h4><i class="ion-document"></i><br/><b>i</b>need<b>a</b>resu.me</h4>
-				<h5>create a R&eacute;sum&eacute; in seconds</h5>
+				<h5>只需一分钟，简历唾手可得</h5>
 
 				<ul>
 					<li>
-						<h5>Super duper simple</h5>
-						<h6>Easy-to-follow instructions every step of the way. Navigate with the <i class="ion-arrow-left-c"></i> and <i class="ion-arrow-right-c"></i> keys or by using the enter button, and follow your progress towards completion with a bar at the top of the screen.</h6>
+						<h5>简单的步骤</h5>
+						<h6>按照提示完成简历. 用 <i class="ion-arrow-left-c"></i> 和 <i class="ion-arrow-right-c"></i> 键或者点击按钮切换上一步/下一步, 顶部进度条会随时显示你当前建立的完成度。</h6>
 					</li>
 					<li>
-						<h5>Compatible With Chrome</h5>
-						<h6>Be sure you're using Google Chrome. It might work in Firefox. It probably wont work on mobile, and definitely wont on Internet Explorer.</h6>
+						<h5>支持 Chrome</h5>
+						<h6>请确认你的浏览器是 Google Chrome. 在 FireFox 效果应该也不错. 手机浏览器上效果不会太好, 不支持 IE.</h6>
 					</li>
 					<li>
-						<h5>Procrastination Station</h5>
-						<h6>Did you find something more fun to do when you were making your resume? Go ahead, we'll automatically save the text that you leave in the fields so you can come back later.</h6>
+						<h5>自动保存</h5>
+						<h6>你是不是经常在做事有其他重要的是要先处理? 那就去吧, 你填写的内容会自动保存的.</h6>
 					</li>
 					<li>
-						<h5>We aren't thieves</h5>
-						<h6>Nothing you enter on this site is ever sent to us or saved on any servers, so nobody sees it except you.</h6>
+						<h5>数据安全</h5>
+						<h6>你所填写的内容不会被发送到任何服务器，所以除了你，没人能获取你的资料。</h6>
 					</li>
 					<li>
-						<h5>Because making pretty resumes isn't one of your skills</h5>
-						<h6>You can see an example of the beautiful default theme <a href="src/example.pdf" target="_blank">here</a>, but if you want to do more, you can also create your own using HTML and CSS. <a href="https://github.com/mitchas/Resume-Generator/tree/master/dev" target="_blank">Learn more</a>.</h6>
+						<h5>其它的交给我</h5>
+						<h6>你可以在 <a href="src/example.pdf" target="_blank">这里</a> 看到一份默认简历, 但是如果你想你也可以用自己的 HTML 和 CSS 生成简历 <a href="https://github.com/mitchas/Resume-Generator/tree/master/dev" target="_blank">了解更多</a>.</h6>
 					</li>
 				</ul>
 
-				<button id="intro_reset">Start Over? <i class="ion-refresh"></i></button>
-				<div id="confirm_reset">Are you sure? <a href="#" id="clear_data_yes">Yes</a> / <a href="#" id="clear_data_no">No</a></div>
-				<button id="intro_begin">Begin <i class="ion-arrow-right-c"></i></button>
+				<button id="intro_reset">重新开始? <i class="ion-refresh"></i></button>
+				<div id="confirm_reset">确定? <a href="#" id="clear_data_yes">好</a> / <a href="#" id="clear_data_no">取消</a></div>
+				<button id="intro_begin">开始吧 <i class="ion-arrow-right-c"></i></button>
 			</section>
 
 
@@ -100,65 +102,65 @@
 					<h2 id="instructions"></h2>
 
 					<!--Personal information-->
-                    <input type="text" class="hideall" id="personal_name_input" placeholder="Sean Combs">
-					<input type="text" class="hideall" id="personal_email_input" placeholder="horselover14@aol.com">
-					<input type="text" class="hideall" id="personal_phone_input" placeholder="760-555-4824">
-					<input type="text" class="hideall" id="personal_location_input" placeholder="Madison, WI">
+                    <input type="text" class="hideall" id="personal_name_input" placeholder="Kchan Zen">
+					<input type="text" class="hideall" id="personal_email_input" placeholder="kchanzen@gmail.com">
+					<input type="text" class="hideall" id="personal_phone_input" placeholder="18002883718">
+					<input type="text" class="hideall" id="personal_location_input" placeholder="成都市春熙路">
 					<input type="text" class="hideall" id="personal_link_input" placeholder="http://linkedin.com/in/mitchas">
 
 					<!--Statement-->
 					<span id="statement" class="hideall">
-						<label>Statement title & Statement:</label><input type="text" id="statement_title" placeholder="Why I want to work here:">
-						<textarea id="personal_statement_input" maxlength="1200" placeholder="I would love to work here because I heard you have the gnarliest lunch buffet..."></textarea>
-						<div id="statement_feedback">For your own good, you only have <span id="statement_remaining"></span> characters left.</div>
+						<label>陈述标题和详细内容:</label><input type="text" id="statement_title" placeholder="为什么我想在这工作">
+						<textarea id="personal_statement_input" maxlength="1200" placeholder="我想在这工作因为这里妹纸多..."></textarea>
+						<div id="statement_feedback">注意, 你还可以输入 <span id="statement_remaining"></span> 个字符.</div>
 					</span>
 
 					<!--Work Experience-->
 					<span id="work" class="hideall">
-						<label>Employer:</label><input type="text" id="employer" placeholder="Google, Inc.">
-						<label>Location:</label><input type="text" id="job_location" placeholder="Mountain View, CA">
-						<label>Time:</label><input type="text" id="job_time" placeholder="July 2014 - Present">
-						<label>Short(ish) Employer Description:</label><input type="text" id="employer_desc" placeholder="Google is the leading search engine...">
+						<label>公司:</label><input type="text" id="employer" placeholder="HackPlan Inc.">
+						<label>地址:</label><input type="text" id="job_location" placeholder="Suzhou, China">
+						<label>时间:</label><input type="text" id="job_time" placeholder="2014 - 至今">
+						<label>简单介绍这家公司:</label><input type="text" id="employer_desc" placeholder="HackPlan 的同事都是有激情的少年...">
 						<hr style="opacity:0 !important;" />
-						<label>Job Title:</label><input type="text" id="title" placeholder="Front End Engineer">
-						<label>Job Description:</label><textarea id="job_desc" placeholder="Responsible for the development of Google.com, nothing serious."></textarea>
-						<div id="desc_formatting">Hint: an asterisk ( * ) will turn into a bullet point!<br/><small>HTML Markup is also supported (don't use line breaks)</small></div>
-						<button id="new_job"><i class="ion-plus"></i> Add job</button>
+						<label>职位:</label><input type="text" id="title" placeholder="前端开发">
+						<label>职位介绍:</label><textarea id="job_desc" placeholder="我需要负责所有在线网站的前端开发工作"></textarea>
+						<div id="desc_formatting">提示: 输入星号 ( * ) 可以生成列表<br/><small>HTML 标签也有效 (除了换行符)</small></div>
+						<button id="new_job"><i class="ion-plus"></i> 添加</button>
 					</span>
 
 					<!-- School -->
 					<span id="schooling">
 						<br/>
-						<label>Degree:</label><input type="text" id="degree" placeholder="Bachelor of Science in Computer Science">
-						<label>School:</label><input type="text" id="school" placeholder="University of Wisconsin-Madison">
-						<label>Location:</label><input type="text" id="school_location" placeholder="Madison, WI">
-						<label>Graduation Year:</label><input type="text" id="graduation" placeholder="2015">
-						<button id="new_school"><i class="ion-plus"></i> Add School</button>
+						<label>学位:</label><input type="text" id="degree" placeholder="计算机专业本科">
+						<label>学校:</label><input type="text" id="school" placeholder="电子科技大学">
+						<label>地址:</label><input type="text" id="school_location" placeholder="成都市郫县清水河">
+						<label>毕业年份:</label><input type="text" id="graduation" placeholder="2015">
+						<button id="new_school"><i class="ion-plus"></i> 添加学校</button>
 					</span>
 
 					<!-- Skills -->
 					<span id="skills">
 						<br/>
-						<label>Skills (Seperate with commas):</label><input type="text" id="skillsinput" placeholder="HTML, CSS, Javascript, Adobe Suite">
+						<label>技能 (用英文都好分开每个技能):</label><input type="text" id="skillsinput" placeholder="HTML, CSS, Javascript, Node.js, PHP">
 					</span>
 
 					<!-- Continue Buton -->
-                    <button id="next_button">Continue <i class="ion-arrow-right-c"></i></button>
+                    <button id="next_button">继续 <i class="ion-arrow-right-c"></i></button>
 			</section>
 
 
 			<!-- Settings -->
 			<section id="settings" class="animated pulse noselect">
-				<h2>Adjust your settings:</h2>
-				<small>After you click "Generate Resume," if something doesn't look right,<br/>just click cancel and try adjusting these settings some more.</small>
+				<h2>调整你的设置:</h2>
+				<small>再点击 "生成简历" 后如果出了问题,<br/>可以点击 "取消" 然后更改你的设置</small>
 				<ul>
 					<li id="choose_theme">
-						<h5>Choose Theme</h5>
-						<h6>This will open the preview menu</h6>
+						<h5>选择模板</h5>
+						<h6>会开启一个预览菜单</h6>
 					</li>
 					<li>
-						<h5>Serif font</h5>
-						<h6>Default is Sans-serif</h6>
+						<h5>字体</h5>
+						<h6>默认为 Sans-serif</h6>
 						<div class="check_wrap"><input type="checkbox" id="serifyes" /></div>
 					</li>
 					<!-- <li>
@@ -167,14 +169,14 @@
 						<div class="check_wrap"><input type="checkbox" id="left_align" /></div>
 					</li> -->
 					<li>
-						<h5>Hide Lines Between Sections</h5>
-						<h6>Shown by Default</h6>
+						<h5>在区域之间隐藏分隔符</h5>
+						<h6>默认显示</h6>
 						<div class="check_wrap"><input type="checkbox" id="removehr" /></div>
 					</li>
-					<li><small>Adjust these to perfect the layout:</small></li>
+					<li><small>调整布局:</small></li>
 					<li>
-						<h5>Paragraph Line Height</h5>
-						<h6>Spacing between lines in paragraphs</h6>
+						<h5>段落行高</h5>
+						<h6>段落间距</h6>
 						<div class="check_wrap">
 							<i class="ion-android-remove-circle" id="decrease_line_height"></i>
 							<span id="line_height_counter">0</span>
@@ -182,16 +184,16 @@
 						</div>
 					</li>
 				</ul>
-				<button id="generate" onclick="_gaq.push(['_trackEvent', 'link', 'click', 'Generate Resume']);">Save my resume!</button>
+				<button id="generate" onclick="_gaq.push(['_trackEvent', 'link', 'click', 'Generate Resume']);">保存简历!</button>
 
 			</section>
 
 
 			<section id="thanks" class="animated pulse">
-				<h2>Good luck with your job search!</h2>
-				<h6>If something didn't look right, click settings on the sidebar and try adjusting those some more.</h6>
+				<h2>祝你找到一份好工作!</h2>
+				<h6>如果出了问题, 可以点击 "取消" 然后更改你的设置</h6>
 
-				<p>If you liked this tool, give me a shout out on Twitter, Facebook, or anything else!<br/><br/>Tell your friends.<br/></br/><br/>Created by Mitch Samuels / <a href="http://mitchs.co" target="_blank">Mitchs.co</a></p>
+				<p>如果你喜欢这个简历生成工具，可以在 Twitter, Facebook, 或者任何地方<br/><br/>告诉你的朋友!<br/></br/><br/>Created by Mitch Samuels / <a href="http://mitchs.co" target="_blank">Mitchs.co</a></p>
 				<br/>
 				<h6>Development takes time. Keep this free. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mitch%40mitchs%2eco&lc=US&item_name=Donation%20to%20ineedaresume&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest" target="_blank">Donate:)</a></h6>
 			</section>
@@ -203,7 +205,7 @@
 
 		<!-- PDF Lightbox -->
 		<div id="pdf_lightbox" class="noselect">
-			<h6>Use the arrows to switch themes.<br/>Theme <span id="current_theme">X</span> of <span id="available_themes">XX</span></h6>
+			<h6>用方向键来选择模板.<br/>Theme <span id="current_theme">X</span> of <span id="available_themes">XX</span></h6>
 			<div id="hide_preview" class="noselect"><i class="ion-ios-close-empty"></i></div>
 			<button id="prev_theme" class="noselect"><i class="ion-ios-arrow-back"></i></button>
 			<button id="next_theme" class="noselect"><i class="ion-ios-arrow-forward"></i></button>
@@ -238,7 +240,7 @@
 
 			<!-- Experience Section -->
 			<div id="pdf_experience_section" class="fill">
-				<h2>Experience</h2>
+				<h2>工作经历</h2>
 				<!-- Job One -->
 				<div id="pdf_job1" class="pdf_job_section fill">
 					<span id="job_1_employer" class="fill"></span>
@@ -274,7 +276,7 @@
 
 			<!-- Education Section -->
 			<div id="pdf_education_section" class="fill">
-				<h2>Education</h2>
+				<h2>教育经历</h2>
 
 				<!-- School One -->
 				<div id="pdf_edu_1" class="pdf_education_section fill">
@@ -302,7 +304,7 @@
 
 			<!-- Skills section -->
 			<div id="pdf_skills_section" class="fill">
-				<h2>Skills</h2>
+				<h2>技能</h2>
 				<span id="pdf_skills" class="fill"></span>
 			</div>
 
@@ -310,23 +312,9 @@
 
 		</div>
 
-		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 		<script src="src/jquery-1.8.3.min.js"></script>
 		<script src="src/main.js"></script>
 		<script src="src/tests.js"></script>
-        <script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-60397420-1']);
-		  _gaq.push(['_trackPageview']);
-
-		  ga('create', 'UA-60397420-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
 	</body>
 </html>
