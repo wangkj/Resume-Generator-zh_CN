@@ -12,8 +12,9 @@
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/animate.css">
-		<link rel="stylesheet" type="text/css" href="css/themes/theme_default.css" id="css_theme_1">
-		<link rel="stylesheet" type="text/css" href="css/themes/theme_default_left.css" id="css_theme_2">
+		<link rel="stylesheet" type="text/css" href="css/themes/theme_default.css" id="css_theme_1" class="xcss">
+		<link rel="stylesheet" type="text/css" href="css/themes/theme_default_left.css" id="css_theme_2" class="xcss" disabled>
+		<link rel="stylesheet" type="text/css" href="css/themes/theme2.css" id="css_theme_3" class="xcss" disabled>
 		<link rel="stylesheet" type="text/css" href="css/print.css">
 
 		<!-- Google Webfont, Lato, 100,300,400,700,900 -->
@@ -49,7 +50,7 @@
 				<li id="tab_3"><i class="ion-ios-briefcase"></i> Work Experience</li>
 				<li id="tab_4"><i class="ion-ios-book"></i> Education</li>
 				<li id="tab_5"><i class="ion-ios-list"></i> Skills</li>
-				<li id="tab_6"><i class="ion-checkmark-circled"></i> Finish</li>
+				<li id="tab_6"><i class="ion-checkmark-circled"></i> Settings / Finish Up</li>
 			</ul>
 		</nav>
 
@@ -59,7 +60,7 @@
 
 			<progress value="0" max="100" id="progressbar"></progress>	
 
-			<div id="branding" onclick="_gaq.push(['_trackEvent', 'link', 'click', 'Go to Mitchs.co']);">developed by mitchs.co</div>
+			<div id="branding" onclick="_gaq.push(['_trackEvent', 'link', 'click', 'Go to Mitchs.co']);">developed by mitch samuels</div>
 
 			<section id="intro_box" class="animated pulse">
 				<h4><i class="ion-document"></i><br/><b>i</b>need<b>a</b>resu.me</h4>
@@ -149,17 +150,22 @@
 			<!-- Settings -->
 			<section id="settings" class="animated pulse noselect">
 				<h2>Adjust your settings:</h2>
+				<small>After you click "Generate Resume," if something doesn't look right,<br/>just click cancel and try adjusting these settings some more.</small>
 				<ul>
+					<li id="choose_theme">
+						<h5>Choose Theme</h5>
+						<h6>This will open the preview menu</h6>
+					</li>
 					<li>
 						<h5>Serif font</h5>
 						<h6>Default is Sans-serif</h6>
 						<div class="check_wrap"><input type="checkbox" id="serifyes" /></div>
 					</li>
-					<li>
+					<!-- <li>
 						<h5>Align Resume Left</h5>
 						<h6>Default is centered</h6>
-						<div class="check_wrap"><input type="checkbox" id="theme2" /></div>
-					</li>
+						<div class="check_wrap"><input type="checkbox" id="left_align" /></div>
+					</li> -->
 					<li>
 						<h5>Hide Lines Between Sections</h5>
 						<h6>Shown by Default</h6>
@@ -176,35 +182,32 @@
 						</div>
 					</li>
 				</ul>
-				<button id="generate" onclick="_gaq.push(['_trackEvent', 'link', 'click', 'Generate Resume']);">Done, create my resume!</button>
+				<button id="generate" onclick="_gaq.push(['_trackEvent', 'link', 'click', 'Generate Resume']);">Save my resume!</button>
 
+			</section>
+
+
+			<section id="thanks" class="animated pulse">
+				<h2>Good luck with your job search!</h2>
+				<h6>If something didn't look right, click settings on the sidebar and try adjusting those some more.</h6>
+
+				<p>If you liked this tool, give me a shout out on Twitter, Facebook, or anything else!<br/><br/>Tell your friends.<br/></br/><br/>Created by Mitch Samuels / <a href="http://mitchs.co" target="_blank">Mitchs.co</a></p>
+				<br/>
+				<h6>Development takes time. Keep this free. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mitch%40mitchs%2eco&lc=US&item_name=Donation%20to%20ineedaresume&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest" target="_blank">Donate:)</a></h6>
 			</section>
 
 		</article>
 
 
-		<!-- PDF Fine Tuning -->
-		<!-- <div id="adjustments">
-			<ul>
-				<li>
-
-				</li>
-				<li>
-
-				</li>
-				<li>
-
-				</li>
-			</ul>
-		</div> -->
 
 
 		<!-- PDF Lightbox -->
-		<div id="pdf_lightbox">
-			<small>This is not exactly what the PDF will look like.<br/>If something looks off after you click create, adjust the settings then try again.</small>
-			<div id="hide_preview"><i class="ion-ios-close-empty"></i></div>
+		<div id="pdf_lightbox" class="noselect">
+			<h6>Use the arrows to switch themes.<br/>Theme <span id="current_theme">X</span> of <span id="available_themes">XX</span></h6>
+			<div id="hide_preview" class="noselect"><i class="ion-ios-close-empty"></i></div>
+			<button id="prev_theme" class="noselect"><i class="ion-ios-arrow-back"></i></button>
+			<button id="next_theme" class="noselect"><i class="ion-ios-arrow-forward"></i></button>
 		</div>
-		<div id="save_from_preview"><i class="ion-ios-cloud-download-outline"></i></div>
 
 
 

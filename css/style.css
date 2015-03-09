@@ -198,28 +198,7 @@ article{
 			background-color: transparent;
 			color: #fff;
 		}
-	#save_from_preview{
-		height: 53px; width: 53px;
-		display: none;
-		line-height: 51px;
-		position: fixed; right: 0;
-		z-index: 5000000;
-		margin-top: 54px;
-		text-align: center;
-		box-sizing:border-box;
-		font-size: 26pt;
-		padding-top: 10px;
-		border-top: 1px solid #3E3242;
-		border: none;
-		background-color: #fff;
-		color: #3E424F;
-		transition:0.3s;
-	}
-		#save_from_preview:hover{
-			cursor: pointer;
-			background-color: transparent;
-			color: #fff;
-		}
+
 
 	progress{
 		-webkit-appearance: none;
@@ -335,6 +314,7 @@ article{
 		list-style-type: none;
 		padding: 0; margin: 0 auto;
 		padding-top: 15px;
+		color: #626c8d;
 	}
 		#intro_box ul li{
 			border-bottom: 1px solid #eef4f4;
@@ -541,7 +521,7 @@ article{
 	#settings ul{
 		list-style-type: none;
 		padding: 0; margin: 0 auto;
-		padding-top: 15px;
+		padding-top: 27px;
 		padding-bottom: 10px;
 	}
 		#settings ul li{
@@ -553,7 +533,8 @@ article{
 			border-left: 0px solid transparent;
 		}
 			#settings ul li:nth-child(1):hover,
-			#settings ul li:nth-child(2):hover{
+			#settings ul li:nth-child(2):hover,
+			#settings ul li:nth-child(3):hover{
 				cursor: pointer;
 				transition:0.2s;
 				border-left: 5px solid #f5414c;
@@ -566,6 +547,7 @@ article{
 			}
 		#settings ul li .check_wrap{
 			text-align: right;
+			position: relative; top:2px;
 		}
 		#settings ul li h5,
 		#settings ul li h6{
@@ -644,8 +626,20 @@ article{
 
 	/*Paragraph on thanks dialog*/
 	#thanks p{
-		font-weight: 300;
 		color: #626c8d;
+		font-weight: 300;
+		font-size: 14pt;
+		padding-top: 22px;
+		text-align: center;
+	}
+	#thanks h6{
+		width: 100%;
+		text-align: center;
+		font-size: 10pt;
+		font-weight: 400;
+		padding: 0; margin: 0 auto;
+		color: #626c8d;
+		padding-top: 16px;
 	}
 
 	/*Tips*/
@@ -678,38 +672,55 @@ article{
 
 	display: none;
 }
-	#pdf_lightbox small{
+	#pdf_lightbox h6{
 		color:#fff;
 		width:100%;
 		font-size: 8pt;
 		line-height: 2em;
 		text-align: center;
 		text-transform: uppercase;
-		position: relative; left: 25px; top:15px;
+		position: fixed; left: 0px; top:15px;
+		margin: 0 auto;
+		padding: 0;
+		font-weight: 300;
 		letter-spacing: 2px;
 	}
 
 
-/*Fine tune the PDF*/
-#adjustments{
-	z-index: 10000000;
-	width: calc(100% - 8.23in);
-	height:100%;
+#next_theme, 
+#prev_theme{
+	color: #fff;
+	opacity: 0.6;
+	height:100px; width: 100px;
+	font-size: 60pt;
+	text-align: center;
+	line-height: 100px;
+	margin-top: 2px;
+	box-sizing: border-box;
+	padding-top: 10px;
+	transition:0.2s;
 	position: fixed;
-	bottom: 0px; right: 0;
-	background: #f5414c;
-	background: linear-gradient(to bottom, #f5414c 0%,#ff2c5e 100%);
-	box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 -3px 6px rgba(0,0,0,0.23);
-
-	box-sizing:border-box;
-	padding: 25px;
+	top:50%; margin-top: -50px;
+	z-index: 50000000000;
+	background-color: transparent;
+	border: none;
 }
-	#adjustments ul{
-		list-style-type: none;
-		padding: 0; margin: 0 auto;
+	#next_theme:hover,
+	#prev_theme:hover{
+		opacity: 1;
+		cursor: pointer;
+		transition:0.2s;
+	}
+	#next_theme:disabled,
+	#prev_theme:disabled{
+		opacity: 0.05;
+		cursor: pointer;
+		transition:0.2s;
 	}
 
-
+	#next_theme{
+		right: 0;
+	}
 
 
 

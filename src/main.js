@@ -235,8 +235,10 @@ $("#settings > ul > li").click(function(){
 	if($(this).find("input").is(':checked')){$(this).find("input").attr('checked', false);
 	}else{$(this).find("input").attr('checked', true);
 	}
+	updateSettings();
 })
 $('input[type=checkbox]').click(function(){
+	updateSettings();
 	event.stopPropagation();
 })
 //Line height and element spacing
@@ -258,18 +260,21 @@ function updateSettings(){
 
 	if ($('#serifyes').is(':checked')) {
 		$("#print_page").removeClass("sans_resume");
+		$("#print_page").fadeIn(0);
+		$("#print_page").fadeOut(100);
+		$("#print_page").addClass("serif_resume");
+	}else {
+		$("#print_page").addClass("sans_resume");
+		$("#print_page").fadeIn(0);
+		$("#print_page").fadeOut(100);
+		$("#print_page").removeClass("serif_resume");
+	}
+	if ($('#serifyes').is(':checked')) {
+		$("#print_page").removeClass("sans_resume");
 		$("#print_page").addClass("serif_resume");
 	}else {
 		$("#print_page").addClass("sans_resume");
 		$("#print_page").removeClass("serif_resume");
-	}
-
-	if($("#theme2").is(':checked')){
-		$("#css_theme_1").attr("disabled", "disabled");
-		$("#css_theme_2").removeAttr("disabled");
-	}else{
-		$("#css_theme_2").attr("disabled", "disabled");
-		$("#css_theme_1").removeAttr("disabled");
 	}
 
 	//Remove HRs
@@ -283,9 +288,71 @@ function updateSettings(){
 
 
 
+//Theme control in lightbox
+currentTheme = 1;
+$("#current_theme").text(currentTheme);
+availThemes = 3;
+$("#available_themes").text(availThemes);
+
+$("#prev_theme").click(function(){
+	currentTheme--;
+	console.log("Next");
+	$("#current_theme").text(currentTheme);
+	checkThemePos();
+	switchTheme();
+});
+$("#next_theme").click(function(){
+	currentTheme++;
+	console.log("Back");
+	$("#current_theme").text(currentTheme);
+	checkThemePos();
+	switchTheme();
+});
+function checkThemePos(){
+	if(currentTheme==availThemes){
+		$("#next_theme").prop("disabled",true);
+	}else{
+		$("#next_theme").prop("disabled",false);
+	}
+	if(currentTheme==1){
+		$("#prev_theme").prop("disabled",true);
+	}else{
+		$("#prev_theme").prop("disabled",false);
+	}
+}
+function switchTheme(){
+	if(currentTheme==1){
+		$(".xcss").attr("disabled", "disabled");
+		$("#css_theme_1").removeAttr("disabled");
+		refreshTheme();
+		
+	}else if(currentTheme==2){
+		$(".xcss").attr("disabled", "disabled");
+		$("#css_theme_2").removeAttr("disabled");
+		refreshTheme();
+	}
+	else if(currentTheme==3){
+		$(".xcss").attr("disabled", "disabled");
+		$("#css_theme_3").removeAttr("disabled");
+		refreshTheme();
+	}
+}
+function refreshTheme(){
+	$("#print_page").fadeOut(0);
+	$("#print_page").animate({ zIndex: 0 });
+	$("#print_page").animate({ zIndex: 1000000 });
+	$("#print_page").fadeIn(100);
+}
+
+
+
+
+
+
 
 // Final button, generate PDF
-$("#generate").click(function(){	
+$("#generate").click(function(){
+
 
 	updateSettings();
 
@@ -297,13 +364,9 @@ $("#generate").click(function(){
 	$("#tips").hide();
 	$("#print_page").hide();
 
-})
-// Final button, generate PDF
-$("#save_from_preview").click(function(){	
-	generatePDF();
-	$("#tips").show();
-	window.print();
-	$("#tips").hide();
+	$("#settings").hide();
+	$("#thanks").show();
+	$("#tab_6").removeClass("activated");
 
 })
 
@@ -317,7 +380,7 @@ $("#backtoedit").click(function(){
 
 
 // Preview Button
-$("#preview_btn").click(function(){
+$("#preview_btn, #choose_theme").click(function(){
 	saveFields();
 	updateSettings();
 	generatePDF();
@@ -329,11 +392,11 @@ $("#preview_btn").click(function(){
 	// $("#adjustments").fadeIn(100);
 })
 // Hide Preview
-$("#hide_preview, #pdf_lightbox").click(function(){
+$("#hide_preview").click(function(){
 	$("#print_page").fadeOut(0);
 
 	// $("#adjustments").fadeOut(0);
-	$("#pdf_lightbox, #save_from_preview").delay(100).fadeOut(100);
+	$("#pdf_lightbox").delay(100).fadeOut(100);
 
 	$("#print_page").animate({ zIndex: 0 });
 })

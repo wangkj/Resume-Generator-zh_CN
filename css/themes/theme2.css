@@ -1,0 +1,257 @@
+
+/*Default, Sans font*/
+.sans_resume{
+	font-family: 'Lato', sans-serif;
+}
+/*For when they select Serif font*/
+.serif_resume{
+	font-family: 'Lora', serif;
+}
+#print_page{
+	padding: 0; margin: 0 auto;
+	width:7.23in;
+	mso-header-margin:.5in; mso-footer-margin:.5in; mso-paper-source:0;
+	z-index: 5000;
+	background-color: #fff;
+	text-align: center;
+	font-weight: 300;
+	overflow: visible !important;
+
+	/*Disable these in print query*/
+	z-index: 0;
+	padding: 0.5in;
+	box-shadow: 0 5px 6px rgba(0,0,0,0.1), 0 5px 6px rgba(0,0,0,0.3);
+	position: absolute;
+	top:0px; left:50%;
+	margin-left: -4.115in;
+	margin-top: 75px;
+	margin-bottom: 75px;
+}
+	/*Styles for links within the resume*/
+	#print_page a{
+		color:#000;
+		border-bottom: 1px dotted black;
+	}
+
+	/*Horizontal Rules between sections*/
+	#print_page hr{
+		display: block !important;
+		opacity: 1;
+		color: transparent;
+		background-color: transparent;
+		border: 0px solid #000;
+		border-bottom: 1px dashed rgba(0,0,0,0.1);
+		margin-top: 10px;
+		/*border-bottom: 1px solid #eef4f4;*/
+	}
+
+	/*H2s are the section headers: Statement Header, "Experience", "Education", etc.*/
+	#print_page h2{
+		text-align: center;
+		text-transform: capitalize;
+		font-weight: 700;
+		font-size: 14pt;
+		letter-spacing: 1px;
+	}
+
+
+	/*	======================
+			Personal Info
+		======================	*/
+
+	/*Person's Name*/
+	#pdf_name{
+		width: 60%;
+		font-size: 22pt;
+		font-weight: 700;
+		text-align: left;
+		text-transform: capitalize;
+		letter-spacing: 1px;
+		display: inline-block;
+		padding-top: 23px; padding-bottom: 26px;
+	}
+	/*Contact Information*/
+	#pdf_contact{
+		width:39.5%;
+		display: inline-block;
+		float: right;
+		line-height: 1.4em;
+		padding-top: 5px;
+		font-weight: 700;
+		padding-bottom: 10px;
+		text-align: right;
+		font-size: 10pt;
+	}
+		/*Adding spacing between items*/
+		#email_icon,
+		#phone_icon,
+		#loc_icon{
+			display: none;
+		}
+			#pdf_email,
+			#pdf_phone,
+			#pdf_location{
+				display: block;
+			}
+		/*Line break for link, bolder*/
+		#pdf_link{
+			font-weight: 700 !important;
+			display: block;
+		}
+
+
+	/*	======================
+		  Statement Section
+		======================	*/
+
+	/*Statement section wrapper*/
+	#pdf_statement_section{
+
+	}
+		#pdf_statement{
+			line-height: 1.6em;
+			text-align: left;
+			font-size: 9pt;
+			padding-bottom: 6px;
+			text-align: justify;
+		}
+
+
+	/*	======================
+		  	Jobs Section
+		======================	*/
+
+	/*Wrapper for individual job - 3 max*/
+	.pdf_job_section{
+		text-align: left;
+		font-weight: 700;
+	}
+		/*Styling for ULs in job desc - only shows if user knows how to use it*/
+		.pdf_job_section ul{
+			padding: 0.05in 0 0.05in 0.5in; margin: 0 auto;
+		}
+
+		/*Employer name, Employer Location, Employment time*/
+		#job_1_employer,
+		#job_1_loc,
+		#job_1_time,
+		#job_2_employer,
+		#job_2_loc,
+		#job_2_time,
+		#job_3_employer,
+		#job_3_loc,
+		#job_3_time{
+
+		}
+			/*Add bullets between Employer/loc and loc/time */
+			#job_1_loc:before,
+			#job_1_time:before,
+			#job_2_loc:before,
+			#job_2_time:before,
+			#job_3_loc:before,
+			#job_3_time:before{
+				content: " \A0 \A0 \A0 \2022 \A0 \A0 \A0";
+			}
+
+		/*	Employer and job description
+			Currently the same, can be different */
+		#pdf_job1_emp_desc, 
+		#pdf_job2_emp_desc, 
+		#pdf_job3_emp_desc,
+		#pdf_job1_job_desc, 
+		#pdf_job2_job_desc, 
+		#pdf_job3_job_desc{
+			font-weight: 400;
+			font-size: 10pt;
+			line-height: 1.5em;
+			margin: 0 auto;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		
+		/*Job Title (different from employer)*/
+		#job1_title, 
+		#job2_title, 
+		#job3_title{
+			font-size: 11pt;
+		}
+
+		/*Styles specifically for 2nd and 3 jobs if shown*/
+		#pdf_job2, 
+		#pdf_job3{
+			padding-top: 15px;
+			margin-top: 12px;
+			border-top: 1px dashed rgba(0,0,0,0.05);
+		}
+
+
+	/*	======================
+		  	School Section
+		======================	*/
+
+	/*Wrapper around entire section*/
+	#pdf_education_section{
+
+	}
+		/*Wrapper around individual schools - 3 max*/
+		.pdf_education_section{
+			margin-bottom: 20px;
+		}
+		/*Degree name styling*/
+		#pdf_degree,
+		#pdf_degree2,
+		#pdf_degree3{
+			font-size: 11pt;
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: 1px;
+			display: block;
+		}
+		/*School,Location,Graduation Date - all the same now - can be separated*/
+		#pdf_school,
+		#pdf_school2,
+		#pdf_school3,
+		#pdf_school_loc,
+		#pdf_school_loc2,
+		#pdf_school_loc3,
+		#pdf_graduation,
+		#pdf_graduation2,
+		#pdf_graduation3{
+			font-size: 10pt;
+		}
+		/*Adding bullets between items*/
+		#pdf_school_loc:before,
+		#pdf_graduation:before,
+		#pdf_school_loc2:before,
+		#pdf_graduation2:before,
+		#pdf_school_loc3:before,
+		#pdf_graduation3:before {
+			content: " \A0 \2022 \A0";
+		}
+
+
+	/*	======================
+		  	Skills Section
+		======================	*/
+
+	/*Skills wrapper*/
+	#pdf_skills_section{
+	}
+		/*Span wrapping the skills.
+		Bullets are placed using JS, cannot be styled differently*/
+		#pdf_skills{
+			font-size: 12pt;
+			letter-spacing: 1px;
+			width:90%;
+			pad-left: 5%;
+			text-align: justify;
+			line-height: 1.6em;
+			position: relative; top:-10px;
+		}
+
+		/*Styles for the bullets specifically*/
+		.skillbullet{
+			font-size: 22pt;
+			position: relative; top:5px;
+		}
+		}
